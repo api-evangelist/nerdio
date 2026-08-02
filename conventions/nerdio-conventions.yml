@@ -1,0 +1,89 @@
+generated: '2026-08-01'
+method: derived
+source: openapi/nerdio-distributor-api-openapi.json
+docs: https://nmmhelp.getnerdio.com/hc/en-us/articles/26125597051277-Nerdio-Manager-Distributor-API-Getting-Started
+notes: >-
+  Cross-cutting request/response semantics for the Nerdio REST surfaces, derived from
+  the published Distributor API OpenAPI and the help-center API documentation for the
+  NME and NMM per-install APIs. Where a convention is genuinely absent it is recorded
+  as absent rather than guessed — Nerdio publishes no idempotency contract, no
+  pagination contract and no rate-limit signalling for any of its three APIs.
+authentication:
+  distributor: Static APIKey request header on every operation.
+  nme_nmm: OAuth2 client credentials against Microsoft Entra ID; bearer token for the install's Application ID URI with the .default scope.
+  see: authentication/nerdio-authentication.yml
+transport:
+  protocol: https
+  media_type: application/json
+  documented_content_negotiation: false
+versioning:
+  style: uri-path
+  distributor: /api-v{version}/ — version supplied as a templated path segment (v1)
+  nme: /api/v1/
+  nmm: /rest-api/v1/ with a parallel /rest-api/v1-beta/ preview surface
+  see: lifecycle/nerdio-lifecycle.yml
+idempotency:
+  supported: false
+  header: null
+  note: >-
+    No idempotency key header or parameter is documented or present in the OpenAPI
+    for any Nerdio API. The mutating Distributor operations (POST /register,
+    PUT /suspend, PUT /reactivate, DELETE /cancel) are keyed on the Azure
+    SubscriptionID and are effectively state-setting rather than idempotency-keyed:
+    re-registering an already-claimed subscription returns 409 Conflict rather than
+    replaying the original response. No Idempotency pointer is wired in apis.yml.
+pagination:
+  supported: false
+  note: >-
+    No pagination parameters appear on any Distributor API collection operation
+    (GET /installs, GET /invoices, GET /invoices/grouped, GET /usage). Result-set
+    scoping on invoices and usage is by date range (period start/end in mm/dd/yyyy
+    form) rather than by page or cursor.
+filtering:
+  invoices_usage: Date-range parameters; the documented date format is mm/dd/yyyy.
+  install_scope: Azure SubscriptionID identifies the partner install(s) to act on.
+  note: >-
+    A single Azure subscription may carry multiple Nerdio Manager installs, so
+    install-scoped responses can return multiple InstallIDs; the docs explicitly
+    instruct integrators to handle more than one.
+field_expansion:
+  supported: false
+metadata:
+  supported: false
+request_tracing:
+  request_id_header: null
+  documented: false
+error_envelope:
+  format: http-status
+  problem_json: false
+  documented_statuses: [200, 400, 401, 409, 422, 500]
+  see: errors/nerdio-problem-types.yml
+  note: >-
+    One uniform status set is declared on every Distributor operation. No response
+    schema or body shape is published for either success or error.
+rate_limiting:
+  published: false
+  headers: null
+  note: >-
+    Nerdio publishes no rate limit for its own APIs. The rate-limit material in the
+    documentation concerns the AZURE Resource Manager limits Nerdio Manager consumes
+    on the customer's behalf (see "Azure API limits and throttling overview" and the
+    Azure API Limit Booster feature), not limits Nerdio imposes on API callers.
+  azure_throttling_docs: https://nmehelp.getnerdio.com/hc/en-us/articles/26124316172941-Azure-API-limits-and-throttling-overview
+long_running_operations:
+  model: job
+  note: >-
+    The NME REST API models long-running work as jobs — /api/v1/job/... endpoints
+    and job-params endpoints on scheduled actions — so mutating calls return job
+    handles that are polled rather than completing inline.
+  source: https://github.com/Get-Nerdio/NerdioManagerPowerShell
+webhooks:
+  see: asyncapi/nerdio-notifications-webhooks.yml
+sandbox:
+  published: false
+  note: >-
+    No sandbox environment, test keys or magic test values are published. A 30-day
+    Nerdio Manager free trial exists (https://getnerdio.com/nerdio-manager-free-trial/)
+    but it is a full product trial, not an API test mode, and the API is disabled by
+    default in every install. GET /api-v{version}/checkhealth and the NME "Test API"
+    operation are connectivity checks, not a test-data surface.

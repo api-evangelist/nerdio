@@ -1,0 +1,29 @@
+generated: '2026-08-01'
+method: generated
+source: openapi/nerdio-distributor-api-openapi.json
+notes: >-
+  Agent Skills are grounded only in the Nerdio Manager Distributor API — the one
+  Nerdio API with a public, machine-readable contract. The NME and NMM REST APIs are
+  served from each customer's own install, so their Swagger documents are not
+  publicly reachable and no skill is authored against them. The Distributor spec
+  declares no operationIds, so each step is grounded in the verbatim HTTP
+  method + path from the spec (the overlay proposes operationIds separately).
+skills:
+- file: nerdio-register-partner-install.md
+  name: Register and manage a partner's Nerdio Manager installs
+  api: openapi/nerdio-distributor-api-openapi.json
+  operations:
+  - GET /api-v{version}/checkhealth
+  - GET /api-v{version}/installs
+  - POST /api-v{version}/register
+  - PUT /api-v{version}/suspend
+  - PUT /api-v{version}/reactivate
+  - DELETE /api-v{version}/cancel
+- file: nerdio-collect-usage-and-invoices.md
+  name: Collect Nerdio Manager usage and invoice data for billing
+  api: openapi/nerdio-distributor-api-openapi.json
+  operations:
+  - GET /api-v{version}/checkhealth
+  - GET /api-v{version}/usage
+  - GET /api-v{version}/invoices
+  - GET /api-v{version}/invoices/grouped

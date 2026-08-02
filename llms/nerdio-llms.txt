@@ -1,0 +1,40 @@
+# Nerdio
+
+> Nerdio automates Microsoft cloud desktop environments (Azure Virtual Desktop, Windows 365, Intune) for IT departments and Managed Service Providers. Nerdio Manager for Enterprise reduces Azure compute costs by 50-70% and automates AVD and W365 deployment for IT teams; Nerdio Manager for MSP provides multi-tenant desktop management for MSPs serving hundreds of clients. Founded 2017, backed by General Atlantic and Lead Edge Capital at a $1.2 billion valuation.
+
+## Products
+- [Nerdio Manager for Enterprise](https://getnerdio.com/nerdio-manager/enterprise/): Cloud desktop management for IT departments; automates AVD provisioning, image management, and Azure cost optimization.
+- [Nerdio Manager for MSP](https://getnerdio.com/nerdio-manager/msp/): Multi-tenant platform for MSPs; manage hundreds of client environments from a single console.
+- [Nerdio for Windows 365](https://getnerdio.com/nerdio-windows-365/): Automates Windows 365 Cloud PC provisioning, management, and cost control at scale.
+
+## Microsoft Technology Solutions
+- [Azure Virtual Desktop (AVD)](https://getnerdio.com/solutions/nerdio-for-avd/): Nerdio's AVD management layer; automates provisioning, host pool scaling, image management, and cost controls.
+- [Microsoft Intune](https://getnerdio.com/solutions/nerdio-for-intune/): Intune policy deployment and endpoint management automation for enterprises and MSPs.
+- [Microsoft 365](https://getnerdio.com/solutions/nerdio-for-microsoft-365-management/): M365 tenant management and deployment automation via Nerdio's unified platform.
+- [Windows 365](https://getnerdio.com/nerdio-windows-365/): Cloud PC lifecycle management; provisioning, scaling, and cost governance for W365 environments.
+- [Azure Local](https://getnerdio.com/solutions/nerdio-for-azure-local/): On-premises Azure Stack HCI management for hybrid cloud desktop deployments.
+- [FSLogix](https://getnerdio.com/solutions/nerdio-for-fslogix/): Profile container management and optimization via FSLogix integration.
+
+## Pricing
+- [Enterprise Pricing](https://getnerdio.com/pricing/enterprise/): Nerdio Manager for Enterprise pricing tiers, seat-based plans, and free trial.
+- [MSP Pricing](https://getnerdio.com/pricing/msp/): Nerdio Manager for MSP pricing; per-seat model, volume tiers, free trial available.
+
+## Why Nerdio
+- [Customer Stories](https://getnerdio.com/customers/): Case studies from enterprise and MSP deployments; documented cost savings and migration outcomes.
+- [Nerdio vs. Citrix](https://getnerdio.com/nerdio-vs-citrix-product-comparison/): Feature-by-feature comparison of Nerdio Manager for Enterprise vs. Citrix DaaS.
+- [Microsoft Partner](https://getnerdio.com/microsoft-partner/): Nerdio's Microsoft Co-Sell partnership, certifications, and joint go-to-market programs.
+- [Nerdio Trust Center](https://getnerdio.com/nerdio-trust-center/): Security certifications, compliance documentation, and data privacy posture.
+
+## Company
+- [About Us](https://getnerdio.com/company/about-us/): Company background, leadership team, funding history, and mission; founded Chicago, 2017.
+- [Press Room](https://getnerdio.com/press-room/): Press releases, executive commentary, and media coverage.
+- [Careers](https://getnerdio.com/company/nerdio-careers/): Open roles across engineering, sales, marketing, and customer success.
+- [Contact](https://getnerdio.com/contact-us/): Sales inquiries, demo requests, support contacts, and partnership inquiries.
+
+## Resources
+- [Blog](https://getnerdio.com/resources/?types[]=blog): Technical articles on AVD, Intune, Azure, and cloud desktop management best practices.
+- [Certification Program](https://getnerdio.com/nerdio-certification-program/): Technical certification for IT professionals and MSP partners on Nerdio platforms.
+- [Glossary](https://getnerdio.com/glossary/): Definitions for AVD, DaaS, FSLogix, Windows 365, and related cloud desktop terms.
+
+## Optional
+- [Sitemap](https://getnerdio.com/sitemap_index.xml)

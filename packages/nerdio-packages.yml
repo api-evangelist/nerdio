@@ -1,0 +1,57 @@
+generated: '2026-08-01'
+method: searched
+source: https://www.powershellgallery.com/packages/NerdioManagerPowerShell
+notes: >-
+  Nerdio ships one first-party client library: a PowerShell module for the Nerdio
+  Manager for Enterprise REST API, auto-generated from the NME API specification
+  with AutoRest (autorest.powershell). Registries probed with no first-party result:
+  npm, PyPI, NuGet. The npm packages matching "nerdio" (n8n-nodes-nerdio-nmm,
+  nerdio.client, nerdio.copilot.webchat) are third-party and are not recorded here.
+packages:
+- language: powershell
+  registry: powershellgallery
+  name: NerdioManagerPowerShell
+  url: https://www.powershellgallery.com/packages/NerdioManagerPowerShell
+  install: Install-Module -Name NerdioManagerPowerShell -AllowPrerelease
+  official: true
+  author: Nerdio Inc.
+  version: 1.2.0-preview
+  published: '2026-07-22'
+  status: public-preview
+  source_code: https://github.com/Get-Nerdio/NerdioManagerPowerShell
+  api: Nerdio Manager for Enterprise REST API
+  generated_from: NME API specification via AutoRest + autorest.powershell
+  surface:
+    cmdlets: 206
+    models: 231
+- language: powershell
+  registry: github
+  name: NMM-PS
+  url: https://github.com/Get-Nerdio/NMM-PS
+  install: git clone https://github.com/Get-Nerdio/NMM-PS
+  official: false
+  author: Nerdio Sales Engineering (community)
+  api: Nerdio Manager for MSP Partner API
+  note: >-
+    Hosted in the Get-Nerdio GitHub organization but the repository states it is
+    an unofficial, community-maintained module created by Nerdio Sales Engineers
+    and is not officially supported by Nerdio.
+registries_probed:
+- registry: powershellgallery
+  result: NerdioManagerPowerShell (official, Nerdio Inc.)
+- registry: npm
+  result: no first-party package
+- registry: pypi
+  result: 404 for "nerdio"
+- registry: nuget
+  result: no first-party package
+- registry: maven-central
+  result: not applicable
+- registry: rubygems
+  result: not applicable
+- registry: crates.io
+  result: not applicable
+- registry: packagist
+  result: not applicable
+- registry: pkg.go.dev
+  result: not applicable

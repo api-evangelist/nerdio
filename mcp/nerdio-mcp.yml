@@ -1,0 +1,57 @@
+generated: '2026-08-01'
+method: derived
+status: candidate
+source: openapi/nerdio-distributor-api-openapi.json
+notes: >-
+  Nerdio publishes NO Model Context Protocol server. This is a CANDIDATE tool list
+  derived from the nine operations in the published Distributor API OpenAPI, kept as
+  a design input only. NO MCPServer pointer is wired into apis.yml, because no MCP
+  server exists — wiring one would credit Nerdio with an agent surface it does not
+  operate. Searched: Nerdio docs and help centers, the Get-Nerdio GitHub
+  organization (10 repositories, none MCP), npm @modelcontextprotocol scope, and
+  public MCP registries — no result. Nerdio does ship an in-product AI assistant
+  ("Nerdio Manager Copilot"), but it is not an MCP server and exposes no protocol
+  endpoint.
+server:
+  name: nerdio-distributor
+  published: false
+  transport: null
+  url: null
+searched:
+- {surface: Nerdio help centers (nmehelp/nmmhelp), result: no MCP documentation}
+- {surface: 'https://github.com/Get-Nerdio', result: no MCP repository}
+- {surface: npm @modelcontextprotocol, result: no first-party package}
+- {surface: 'https://getnerdio.com/llms.txt', result: no MCP entry}
+tools:
+- name: check_health
+  description: Evaluate overall health of the Distributor API.
+  source_operation: openapi/nerdio-distributor-api-openapi.json#GET /api-v{version}/checkhealth
+- name: list_installs
+  description: Retrieve a list of all NMM installs you have registered via API or Mothership.
+  source_operation: openapi/nerdio-distributor-api-openapi.json#GET /api-v{version}/installs
+- name: register_installs
+  description: Claim a MSP partner's existing and future NMM installs in their Azure Subscription.
+  source_operation: openapi/nerdio-distributor-api-openapi.json#POST /api-v{version}/register
+- name: suspend_installs
+  description: Suspend all installs in an Azure subscription (temporarily halt usage for non-payment).
+  source_operation: openapi/nerdio-distributor-api-openapi.json#PUT /api-v{version}/suspend
+- name: reactivate_installs
+  description: Unsuspend all installs in an Azure subscription.
+  source_operation: openapi/nerdio-distributor-api-openapi.json#PUT /api-v{version}/reactivate
+- name: cancel_installs
+  description: Unregister previously claimed partner NMM installs and suspend those installs.
+  source_operation: openapi/nerdio-distributor-api-openapi.json#DELETE /api-v{version}/cancel
+- name: get_invoices
+  description: Collect consumption information for monthly billing.
+  source_operation: openapi/nerdio-distributor-api-openapi.json#GET /api-v{version}/invoices
+- name: get_invoices_grouped
+  description: Collect consumption information grouped by partner and account.
+  source_operation: openapi/nerdio-distributor-api-openapi.json#GET /api-v{version}/invoices/grouped
+- name: get_usage
+  description: Collect daily usage information.
+  source_operation: openapi/nerdio-distributor-api-openapi.json#GET /api-v{version}/usage
+risk_notes:
+- >-
+  register, suspend, reactivate and cancel act on EVERY install in the supplied
+  Azure subscription and directly affect a partner MSP's ability to log in. Any
+  future agent exposure of these should be gated behind human confirmation.

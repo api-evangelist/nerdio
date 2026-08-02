@@ -1,0 +1,169 @@
+generated: '2026-08-01'
+method: searched
+source: https://github.com/Get-Nerdio/NerdioManagerPowerShell
+notes: >-
+  Nerdio ships no shell CLI binary. Its first-party command-line surface is the
+  NerdioManagerPowerShell module — 206 cmdlets plus 231 request/response models,
+  auto-generated from the Nerdio Manager for Enterprise API specification with
+  AutoRest and the autorest.powershell extension, published by Nerdio Inc. on the
+  PowerShell Gallery. Each cmdlet's documentation page in the repository names the
+  REST endpoint it calls, which makes the module the only public map of the NME
+  REST API surface (the Swagger document itself is served only from a customer's
+  own install). Counts and groupings below are read directly from that published
+  documentation set, not estimated.
+name: NerdioManagerPowerShell
+kind: powershell-module
+official: true
+vendor: Nerdio Inc.
+status: public-preview
+version: 1.2.0-preview
+released: '2026-07-22'
+api: Nerdio Manager for Enterprise REST API
+generated_from: NME API specification via AutoRest + autorest.powershell
+compatibility:
+- PowerShell 7+ (Core)
+- Windows PowerShell 5.1 (Desktop)
+install:
+- method: powershellgallery
+  command: Install-Module -Name NerdioManagerPowerShell -AllowPrerelease
+- method: github
+  command: git clone https://github.com/Get-Nerdio/NerdioManagerPowerShell.git && Import-Module -Name ./NerdioManagerPowerShell/NerdioManagerPowerShell.psm1
+documentation: https://github.com/Get-Nerdio/NerdioManagerPowerShell/tree/main/documentation
+surface:
+  cmdlets: 206
+  models: 231
+  verbs:
+    Get: 78
+    New: 35
+    Update: 30
+    Remove: 25
+    Set: 17
+    Invoke: 17
+    Add: 1
+    Enable: 1
+    Disable: 1
+    Test: 1
+    Connect: 1
+    Disconnect: 1
+session:
+- cmdlet: Connect-Nme
+  purpose: Authenticate against an NME install (NmeUri, TenantId, ClientId, ClientSecret, ApiScope).
+- cmdlet: Disconnect-Nme
+  purpose: End the session.
+- cmdlet: Test-Nme
+  endpoint: /api/v1/test
+  purpose: Connectivity / auth smoke test.
+groups:
+- group: ARM host pools and session hosts
+  endpoint_prefix: /api/v1/arm/
+  cmdlets: 66
+  note: 64 of the 66 sit under /api/v1/arm/hostpool/{subscriptionId}/{resourceGroup}/{hostPoolName}; the rest under /api/v1/arm/workspace.
+  examples: [Get-NmeHostPool, Get-NmeHostPoolAutoScale, Get-NmeHostPoolAvdProperty, Get-NmeSessionHost]
+- group: App management policies and repositories
+  endpoint_prefix: /api/v1/app-management/
+  cmdlets: 15
+  examples: [Get-NmeAppManagementAppGroup, Get-NmeAppManagementOnetimePolicy, Get-NmeAppManagementRecurrentPolicy, Get-NmeAppManagementRepository]
+- group: App attach images
+  endpoint_prefix: /api/v1/app-attach/
+  cmdlets: 10
+  examples: [Get-NmeAppAttachImage, Get-NmeAppAttachImageVersion, New-NmeAppAttachCertificate]
+- group: Desktop images
+  endpoint_prefix: /api/v1/desktop-image/
+  cmdlets: 10
+  examples: [Get-NmeDesktopImage, Invoke-NmeDesktopImageRunScript, Invoke-NmeDesktopImageSetAsImage]
+- group: Notifications (mailboxes, webhooks, conditions, actions)
+  endpoint_prefix: /api/v1/notifications/
+  cmdlets: 10
+  examples: [Get-NmeLinkedNotificationMailbox, Get-NmeLinkedNotificationWebhook, Get-NmeNotificationCondition, New-NmeNotificationAction]
+- group: Storage (Azure Files, NetApp Files, auto-scale)
+  endpoint_prefix: /api/v1/storage/
+  cmdlets: 9
+  examples: [Get-NmeFileShare, Get-NmeFileShareAutoscale, Get-NmeNetAppFilesAutoscale]
+- group: Scripted actions and runbooks
+  endpoint_prefix: /api/v1/scripted-actions/
+  cmdlets: 9
+  examples: [Get-NmeScriptedAction, Invoke-NmeRunbookScriptedActionRun, New-NmeRunbookScriptedActionsSchedule]
+- group: User cost attribution and reporting
+  endpoint_prefix: /api/v1/user-cost-attribution/
+  cmdlets: 9
+  examples: [Get-NmeUserCostAttributionConfigurationReport, Invoke-NmeUserCostAttributionConfigurationReportBuild]
+- group: Shell apps
+  endpoint_prefix: /api/v1/shell-app/
+  cmdlets: 8
+- group: Auto-scale profiles
+  endpoint_prefix: /api/v1/auto-scale-profile/
+  cmdlets: 7
+- group: Console Connect regions
+  endpoint_prefix: /api/v1/console-connect/
+  cmdlets: 4
+- group: FSLogix profiles
+  endpoint_prefix: /api/v1/fslogix/
+  cmdlets: 4
+- group: Host pool scripted action profiles
+  endpoint_prefix: /api/v1/hostpool-scripted-action-profiles/
+  cmdlets: 4
+- group: Portal notifications
+  endpoint_prefix: /api/v1/portal-notification/
+  cmdlets: 4
+- group: Scripted action groups
+  endpoint_prefix: /api/v1/scripted-actions-groups/
+  cmdlets: 4
+- group: Secure variables
+  endpoint_prefix: /api/v1/secure-variable/
+  cmdlets: 4
+- group: Users and RBAC roles
+  endpoint_prefix: /api/v1/users-and-roles/
+  cmdlets: 3
+- group: Jobs (long-running operations)
+  endpoint_prefix: /api/v1/job/
+  cmdlets: 3
+  examples: [Get-NmeJob, Get-NmeJobTask, Get-NmeJobType]
+- group: Linked networks
+  endpoint_prefix: /api/v1/networks/
+  cmdlets: 3
+- group: Linked resource groups
+  endpoint_prefix: /api/v1/resourcegroup/
+  cmdlets: 3
+- group: Linked subscriptions
+  endpoint_prefix: /api/v1/subscriptions/
+  cmdlets: 3
+- group: AVD workspaces
+  endpoint_prefix: /api/v1/workspace/
+  cmdlets: 3
+- group: Usage
+  endpoint_prefix: /api/v1/usages/
+  cmdlets: 2
+- group: Portal branding
+  endpoint_prefix: /api/v1/portal/
+  cmdlets: 2
+- group: Active Directory config
+  endpoint_prefix: /api/v1/ad/
+  cmdlets: 1
+- group: Deployment / install info
+  endpoint_prefix: /api/v1/deployment/
+  cmdlets: 1
+- group: Images
+  endpoint_prefix: /api/v1/image/
+  cmdlets: 1
+- group: Packages
+  endpoint_prefix: /api/v1/package/
+  cmdlets: 1
+- group: Tenant entitlements
+  endpoint_prefix: /api/v1/tenant/
+  cmdlets: 1
+- group: Intune device Console Connect
+  endpoint_prefix: /api/v1/intune/
+  cmdlets: 1
+key_flows:
+- name: Connect and inspect an install
+  steps: [Connect-Nme, Get-NmeCurrentInstallationInfo, Get-NmeWorkspace, Disconnect-Nme]
+- name: Inspect and tune a host pool
+  steps: [Get-NmeHostPool, Get-NmeHostPoolAutoScale, Get-NmeSessionHost]
+- name: Roll a desktop image
+  steps: [Get-NmeDesktopImage, Invoke-NmeDesktopImageRunScript, Invoke-NmeDesktopImageSetAsImage, Get-NmeJob]
+community_modules:
+- name: NMM-PS
+  url: https://github.com/Get-Nerdio/NMM-PS
+  api: Nerdio Manager for MSP Partner API
+  official: false
+  note: Community module by Nerdio Sales Engineers; not officially supported by Nerdio.

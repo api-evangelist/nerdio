@@ -1,0 +1,37 @@
+generated: '2026-08-01'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: getnerdio.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct 18 23:20:19 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: nmmhelp.getnerdio.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct 28 18:26:51 2026 GMT
+  hsts: true
+  hsts_max_age: 259200
+- host: nmm-distributor-api.nerdio.net
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Dec 10 23:59:59 2026 GMT
+  hsts: null
+domains:
+- domain: getnerdio.com
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: reject
+- domain: nerdio.net
+  dnssec: false
+  caa:
+  - 0 issue "godaddy.com"
+  - 0 issue "digicert.com"
+  - 0 issue "letsencrypt.org"
+  spf: true
+  dmarc: true
+  dmarc_policy: reject

@@ -1,0 +1,79 @@
+generated: '2026-08-01'
+method: derived
+source: openapi/nerdio-distributor-api-openapi.json
+docs: https://getnerdio.com/nerdio-trust-center/
+notes: >-
+  Standards conformance derived from the published Distributor API OpenAPI and the
+  Nerdio help-center documentation for the NME and NMM APIs, plus the compliance
+  posture Nerdio publishes on its Trust Center. Absence is recorded as absence.
+standards:
+- id: openapi-3.0
+  conforms: true
+  evidence: openapi/nerdio-distributor-api-openapi.json declares openapi 3.0.1 with 9 documented operations
+- id: openapi-3.1
+  conforms: false
+- id: oauth2
+  conforms: true
+  evidence: >-
+    NME and NMM REST APIs authenticate with the OAuth2 client-credentials grant
+    against Microsoft Entra ID; not declared in the Distributor OpenAPI, which uses
+    an API key header instead.
+- id: oauth2-client-credentials
+  conforms: true
+  evidence: https://nmehelp.getnerdio.com/hc/en-us/articles/26124297445901-Getting-Started-with-REST-API-Integration
+- id: openid-connect
+  conforms: false
+  evidence: No /.well-known/openid-configuration on any Nerdio host; identity is delegated to the customer's Entra ID tenant.
+- id: rfc8414-oauth-authorization-server-metadata
+  conforms: false
+  evidence: /.well-known/oauth-authorization-server returns 404 on all probed hosts
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: No application/problem+json response is declared; errors are plain HTTP statuses with prose descriptions
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: /.well-known/security.txt returns 404 on getnerdio.com, nerdio.net API host and both help hosts
+- id: rfc8594-sunset-header
+  conforms: false
+  evidence: Deprecations are published as a dated help-center register, not as Sunset/Deprecation response headers
+- id: rfc8615-well-known-uris
+  conforms: false
+  evidence: No valid /.well-known/ document published; roadmap SPA hosts answer 200 with HTML for every path
+- id: asyncapi
+  conforms: false
+  evidence: Outbound notification webhooks exist but no AsyncAPI document is published
+- id: json-api
+  conforms: false
+- id: odata
+  conforms: false
+- id: scim
+  conforms: false
+- id: graphql
+  conforms: false
+  evidence: No /graphql surface found on any Nerdio host
+- id: mcp
+  conforms: false
+  evidence: No hosted or published Model Context Protocol server found
+- id: a2a
+  conforms: false
+  evidence: No valid A2A agent card at /.well-known/agent-card.json or /.well-known/agent.json on any host
+- id: llms-txt
+  conforms: true
+  evidence: Provider-published https://getnerdio.com/llms.txt (saved verbatim to llms/nerdio-llms.txt)
+- id: idempotency-key
+  conforms: false
+  evidence: No idempotency key header or parameter documented or present in the spec
+- id: hsts
+  conforms: true
+  evidence: 'security/nerdio-domain-security.yml: getnerdio.com HSTS max-age 31536000'
+compliance_program:
+  published: true
+  url: https://getnerdio.com/nerdio-trust-center/
+  see: security/nerdio-trust-center.yml
+  certifications:
+  - SOC 2
+  - GDPR
+  frameworks_referenced:
+  - CIS Benchmarks / CIS Hardened Images
+  - Microsoft Intelligent Security Association (MISA)
+  - Azure Government (Nerdio Manager for MSP Gov Edition)

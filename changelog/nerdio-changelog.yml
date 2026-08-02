@@ -1,0 +1,69 @@
+generated: '2026-08-01'
+method: searched
+source: https://nmehelp.getnerdio.com/hc/en-us/articles/19837802929677-Release-Notes
+notes: >-
+  Nerdio publishes product release notes per product, continuously updated in the
+  help center rather than as a separate dated feed. The REST API surface is not
+  versioned separately from the product; API additions and removals ride the product
+  release train, with removals additionally registered in the REST API deprecated
+  endpoints article. Recent window only — the live pages are the source of truth.
+scheme: product-release (major.minor.patch), continuously edited help-center article
+channels:
+- product: Nerdio Manager for Enterprise
+  url: https://nmehelp.getnerdio.com/hc/en-us/articles/19837802929677-Release-Notes
+  current_version: 8.1.0
+  current_release_date: '2026-07-21'
+  channel: Public Preview
+- product: Nerdio Manager for MSP
+  url: https://nmmhelp.getnerdio.com/hc/en-us/articles/360055385832-NMM-Release-Notes
+  current_version: 7.2.0
+  current_release_date: '2026-07-28'
+  channel: Public Preview
+- product: NerdioManagerPowerShell module
+  url: https://github.com/Get-Nerdio/NerdioManagerPowerShell/blob/main/CHANGELOG.md
+  current_version: 1.2.0-preview
+  current_release_date: '2026-07-22'
+  channel: Public Preview
+- product: Notices (EoL / EoM / breaking service changes)
+  url: https://nmehelp.getnerdio.com/hc/en-us/articles/43876939725837-About-Nerdio-Manager-Notices
+- product: REST API deprecated endpoints and properties
+  url: https://nmehelp.getnerdio.com/hc/en-us/articles/29088961923981-REST-API-Deprecated-Endpoints-and-Properties
+entries:
+- version: 8.1.0
+  product: Nerdio Manager for Enterprise
+  date: '2026-07-21'
+  channel: Public Preview
+  breaking: false
+  highlights:
+  - Global Pools for AVD (Preview, Premium only) — pool groups, assignment policies and failover policies for large-scale AVD deployments.
+  - AVD Personal to Windows 365 Enterprise migration is now GA.
+  - Redesigned left navigation menu enabled by default; legacy menu retires with 8.2.
+  - AVD Hybrid for Nutanix (Preview) gains Console Connect support and auto-scale.
+  - Azure Files v2 storage account creation supported; new Azure Files > User Profiles tab for FSLogix profiles.
+  - Auto-revert option added to Azure Capacity Extender (off by default).
+  deprecations:
+  - Legacy left navigation menu announced for retirement in 8.2.
+- version: 7.2.0
+  product: Nerdio Manager for MSP
+  date: '2026-07-28'
+  channel: Public Preview
+  breaking: false
+  highlights:
+  - Reporting Engine — new Teams, Conditional Access Policies and Purview data collectors; Users collector adds Copilot license and sign-in risk.
+  - Reporting Engine now honours RBAC so users cannot view reports for accounts they lack access to.
+  - OneDrive and SharePoint collectors can store access certificates in the MSP-level key vault.
+  - VIP user protection — mark accounts as VIP and control which RBAC roles may modify or offboard them.
+- version: 1.2.0-preview
+  product: NerdioManagerPowerShell
+  date: '2026-07-22'
+  channel: Public Preview
+  breaking: false
+  highlights:
+  - First-party PowerShell module for the NME REST API, generated from the NME API specification with AutoRest.
+  - Nerdio warns that functionality, names and behaviours may change until a stable release is announced.
+api_removals:
+- date: '2024-04-25'
+  scope: Nerdio Manager for Enterprise REST API
+  removed_endpoints: 15
+  note: Desktop-image schedule, host pool reimage/script-execution schedule and scripted-action schedule endpoints removed.
+  url: https://nmehelp.getnerdio.com/hc/en-us/articles/29088961923981-REST-API-Deprecated-Endpoints-and-Properties

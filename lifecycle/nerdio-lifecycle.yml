@@ -1,0 +1,79 @@
+generated: '2026-08-01'
+method: searched
+source: https://nmehelp.getnerdio.com/hc/en-us/articles/29088961923981-REST-API-Deprecated-Endpoints-and-Properties
+versioning:
+  scheme: uri-path
+  apis:
+  - api: Nerdio Manager Distributor API
+    current: v1
+    form: /api-v{version}/...
+    note: >-
+      The version is a templated path segment (api-v1). Supplying an incorrect
+      version number is documented as a 400 Bad request cause.
+  - api: Nerdio Manager for Enterprise REST API
+    current: v1
+    form: /api/v1/...
+  - api: Nerdio Manager for MSP Partner API
+    current: v1
+    form: /rest-api/v1/accounts/{accountId}/...
+    preview_channel: v1-beta
+    note: >-
+      A v1-beta surface is maintained alongside v1; the community NMM PowerShell
+      module selects between 'v1' and 'v1-beta' swagger documents.
+product_release_cadence:
+  scheme: semver-ish product releases (major.minor.patch)
+  nme_current: 8.1.0 Public Preview (released 2026-07-21)
+  nmm_current: 7.2.0 Public Preview (released 2026-07-28)
+  release_notes:
+  - https://nmehelp.getnerdio.com/hc/en-us/articles/19837802929677-Release-Notes
+  - https://nmmhelp.getnerdio.com/hc/en-us/articles/360055385832-NMM-Release-Notes
+deprecation:
+  policy_url: https://nmehelp.getnerdio.com/hc/en-us/articles/29088961923981-REST-API-Deprecated-Endpoints-and-Properties
+  notices_url: https://nmehelp.getnerdio.com/hc/en-us/articles/43876939725837-About-Nerdio-Manager-Notices
+  sunset_header: false
+  deprecation_header: false
+  practice: >-
+    Nerdio maintains a dated register of deprecated REST API endpoints and model
+    properties for Nerdio Manager for Enterprise — HTTP method, path, the date of
+    removal and the product version it was removed in — alongside a separate
+    notices section for end-of-maintenance / end-of-life announcements against
+    underlying services. Notices carry the date the change becomes service
+    impacting, not the issue date. RFC 8594 Sunset/Deprecation response headers
+    are not documented.
+  deprecated_endpoints_registered: 15
+  deprecated_properties_registered: 19
+  recent_removals:
+  - {date: '2024-04-25', scope: endpoints, count: 15, example: 'GET /api/v1/desktop-image/{subscriptionId}/{resourceGroup}/{name}/set-as-image/schedule'}
+  - {date: '2024-07-18', scope: property, item: CreateImageFromLibraryPayload.UseTrustedLaunch}
+  - {date: '2023-12-29', scope: property, item: DynamicPoolConfigurationRestModel.MinCountCreatedVmsType, removed_in: '6.3'}
+  product_eol_notices:
+  - {effective: '2026-04-01', title: End of Maintenance (EoM) and End of Life (EoL) for Sepago Integration, url: 'https://nmehelp.getnerdio.com/hc/en-us/articles/43876948575245-2026-04-01-Notice-of-End-of-Maintenance-EoM-and-End-of-Life-EoL-for-Sepago-Integration'}
+  - {effective: '2026-04-01', title: Kerberos Encryption Enforcement (RC4 Deprecation), url: 'https://nmehelp.getnerdio.com/hc/en-us/articles/44790485692813-2026-04-01-Kerberos-Encryption-Enforcement-RC4-Deprecation'}
+  - {effective: '2026-03-31', title: Azure changes to default outbound connectivity, url: 'https://nmehelp.getnerdio.com/hc/en-us/articles/38667698263949-2026-03-31-Azure-changes-to-default-outbound-connectivity'}
+  - {effective: '8.2', title: Legacy left navigation menu retirement, source: NME 8.1.0 release notes}
+roadmap:
+  nme: https://nmeroadmap.getnerdio.com
+  nmm: https://nmmroadmap.getnerdio.com
+  note: >-
+    Public product roadmaps, moved off the help center in July 2025. Both are
+    single-page applications.
+support:
+  scope_nme: https://nmehelp.getnerdio.com/hc/en-us/articles/31651725480205-Nerdio-Manager-for-Enterprise-Scope-of-Support
+  scope_nmm: https://nmmhelp.getnerdio.com/hc/en-us/articles/4420813129101-Nerdio-Manager-for-MSP-Support-Scope-and-Partner-Responsibility
+  channel: https://getnerdio.com/support/
+sla:
+  published: false
+  note: >-
+    No public SLA or uptime commitment was found for the Distributor API. NME and
+    NMM run in the customer's own Azure subscription, so availability is a function
+    of the customer's Azure environment rather than a Nerdio-operated service.
+status_page:
+  published: false
+  note: >-
+    Nerdio operates no public status page. Because Nerdio Manager is deployed into
+    the customer's own Azure subscription, health is checked per install at
+    <nerdio_manager_url>/healthStatus and on the in-product Insights > Health page.
+    No StatusPage pointer is wired in apis.yml.
+  per_install_health_check: /healthStatus
+  distributor_api_health_operation: GET /api-v{version}/checkhealth
+deprecated_operations: []

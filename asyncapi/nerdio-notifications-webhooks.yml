@@ -1,0 +1,68 @@
+generated: '2026-08-01'
+method: searched
+source: https://nmehelp.getnerdio.com/hc/en-us/articles/29088984960653-Configure-Microsoft-Teams-Notifications-Using-Webhooks
+spec_type: Webhooks
+asyncapi_published: false
+notes: >-
+  Nerdio publishes no AsyncAPI document and no event-schema catalog. It does ship a
+  real outbound webhook surface: since Nerdio Manager v6.3 an administrator can link
+  one or more webhook endpoints and have the notification engine POST to them when a
+  configured alert condition fires, in addition to (or instead of) email. The
+  webhook set is user-configured per install rather than a fixed provider event
+  catalog, and it is also addressable through the REST API
+  (/api/v1/notifications — Get-NmeLinkedNotificationWebhook, plus notification
+  condition and action cmdlets). Only what Nerdio documents is recorded below;
+  no event names or payload schemas are invented.
+surface:
+  direction: outbound (Nerdio Manager POSTs to a customer-supplied endpoint)
+  product: Nerdio Manager for Enterprise and Nerdio Manager for MSP
+  since: v6.3
+  configuration_ui: System > Settings > Nerdio > Email and webhook notifications > Link webhook
+  api: /api/v1/notifications
+  api_cmdlets:
+  - Get-NmeLinkedNotificationWebhook
+  - Get-NmeNotificationCondition
+  - New-NmeNotificationCondition
+  - Get-NmeNotificationAction
+  - New-NmeNotificationAction
+subscription:
+  fields:
+  - {name: Webhook name, required: true}
+  - {name: Endpoint URL, required: true, note: the consumer-side URL Nerdio POSTs to}
+  - {name: Payload, required: true, note: payload format selector; the documented option is "Microsoft Teams adaptive card"}
+  - {name: Auth scheme, required: true, note: 'documented example selects "None"'}
+payload_formats:
+- name: Microsoft Teams adaptive card
+  documented: true
+  note: >-
+    Adaptive Cards format, intended for the Teams "Post to a chat when a webhook
+    request is received" workflow. Nerdio's documentation states this is "one of the
+    supported payload formats"; the others are not enumerated in the public docs.
+events:
+  catalog_published: false
+  model: >-
+    Events are not a fixed provider-published list. An administrator defines a
+    notification CONDITION (targets — all tenants/workspaces, a specific tenant,
+    workspace or host pool — plus the tasks and statuses to match) and a
+    corresponding ACTION, and the action fires the webhook when the condition
+    matches.
+  condition_families:
+  - {family: Azure Virtual Desktop, note: user-defined conditions over targets, tasks and statuses (for example failed tasks, auto-scale actions, role changes)}
+  - {family: Windows 365 / Cloud PC, note: pre-configured alert conditions that can be activated or edited (severity, enabled, portal pop-up, send email)}
+  - {family: Intune, note: pre-built alert conditions, selectable per severity (warning or high); not editable}
+  delivery_channels:
+  - email (requires a linked mailbox — Microsoft 365, or SMTP on Premium edition)
+  - webhook
+  - in-console portal pop-up
+docs:
+- title: Configure Microsoft Teams Notifications Using Webhooks
+  url: https://nmehelp.getnerdio.com/hc/en-us/articles/29088984960653-Configure-Microsoft-Teams-Notifications-Using-Webhooks
+- title: Alerts and notifications
+  url: https://nmehelp.getnerdio.com/hc/en-us/articles/26124325722893-Alerts-and-notifications
+- title: Configure Email Notifications
+  url: https://nmehelp.getnerdio.com/hc/en-us/articles/26124296834445-Configure-Email-Notifications
+gaps:
+- No AsyncAPI document published (no AsyncAPI pointer is wired in apis.yml).
+- No event name registry and no payload schema beyond the Teams Adaptive Card format.
+- No documented retry, signing or replay semantics for webhook delivery.
+- The full list of supported payload formats and auth schemes is not published.

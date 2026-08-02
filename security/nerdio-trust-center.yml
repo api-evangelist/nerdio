@@ -1,0 +1,52 @@
+generated: '2026-08-01'
+method: searched
+probe: true
+source: https://getnerdio.com/nerdio-trust-center/
+url: https://getnerdio.com/nerdio-trust-center/
+notes: >-
+  Nerdio publishes a Trust Center page on its marketing site. The mechanical probe
+  (probe-security-programs.py) could not read it because getnerdio.com answers 403
+  to non-browser clients on content paths; the page was fetched and read directly,
+  so this file is recorded as searched with the fetch as evidence. Nerdio operates
+  no separate trust.<domain> subdomain (trust.getnerdio.com does not resolve).
+certifications:
+- SOC 2
+- GDPR
+frameworks:
+- name: CIS Benchmarks / CIS Hardened Images
+  note: >-
+    Nerdio integrates CIS Hardened Images directly into its products and ships
+    CIS-aligned policy automation; announced with the Center for Internet Security.
+- name: Microsoft Intelligent Security Association (MISA)
+  note: Nerdio is a MISA member.
+  url: https://getnerdio.com/press/nerdio-joins-the-microsoft-intelligent-security-association/
+- name: Azure Government
+  note: Nerdio Manager for MSP Gov Edition is listed on the Microsoft Azure Government Marketplace.
+  url: https://getnerdio.com/blog/introducing-nerdio-manager-for-msp-gov-edition/
+practices:
+- Security-first product design
+- Secure system development lifecycle (SSDLC)
+customer_compliance_guidance:
+- title: How Can I Configure Nerdio Manager for SOC Audit Compliance?
+  url: https://nmehelp.getnerdio.com/hc/en-us/articles/26124345677197-How-Can-I-Configure-Nerdio-Manager-for-SOC-Audit-Compliance
+- title: Navigating CMMC compliance with Nerdio
+  url: https://getnerdio.com/resources/navigating-cmmc-compliance-with-nerdio/
+- title: Harden Nerdio Manager
+  url: https://nmehelp.getnerdio.com/hc/en-us/articles/26124315691149-Harden-Nerdio-Manager
+legal:
+  policies: https://getnerdio.com/nerdio-policies-legal/
+  terms_of_service: https://getnerdio.com/terms-of-service/
+  privacy_policy: https://getnerdio.com/privacy-policy/
+  cookie_policy: https://getnerdio.com/cookie-policy/
+not_found:
+- ISO 27001 (not named on the Trust Center page)
+- PCI DSS
+- HIPAA
+- FedRAMP
+- CSA STAR
+- A downloadable report / evidence portal (report requests route through https://getnerdio.com/contact-us/)
+evidence:
+- source: https://getnerdio.com/nerdio-trust-center/
+  fetched: '2026-08-01'
+  http_status: 200
+  keywords: [trust center, soc 2, gdpr, misa, ssdlc, security-first]

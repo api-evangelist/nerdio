@@ -1,0 +1,46 @@
+generated: '2026-08-01'
+method: probed
+source: live GET of /.well-known/* on every Nerdio host in apis.yml
+result: none
+notes: >-
+  No /.well-known/ discovery document is published on any Nerdio host. Recorded as
+  probe evidence only — no WellKnown, SecurityTxt or APICatalog pointer is wired in
+  apis.yml because nothing was found. Note the roadmap hosts (nmeroadmap /
+  nmmroadmap.getnerdio.com) answer HTTP 200 to EVERY /.well-known/* path with a
+  single-page-app HTML shell (content-type text/html), which is a false positive and
+  is recorded as such, not as a hit.
+hosts:
+- host: https://nmm-distributor-api.nerdio.net
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+- host: https://getnerdio.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+  - {path: /llms.txt, status: 200, file: ../llms/nerdio-llms.txt, note: provider-published llms.txt}
+- host: https://nmehelp.getnerdio.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+- host: https://nmmhelp.getnerdio.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/agent-card.json, status: 404}
+  - {path: /.well-known/agent.json, status: 404}
+- host: https://nmeroadmap.getnerdio.com
+  documents:
+  - {path: /.well-known/agent-card.json, status: 200, valid: false, content_type: text/html, note: SPA catch-all HTML shell, not an agent card}
+  - {path: /.well-known/agent.json, status: 200, valid: false, content_type: text/html, note: SPA catch-all HTML shell, not an agent card}
+  - {path: /.well-known/security.txt, status: 200, valid: false, content_type: text/html, note: SPA catch-all HTML shell, not a security.txt}
+- host: https://nmmroadmap.getnerdio.com
+  documents:
+  - {path: /.well-known/agent-card.json, status: 200, valid: false, content_type: text/html, note: SPA catch-all HTML shell, not an agent card}
+  - {path: /.well-known/agent.json, status: 200, valid: false, content_type: text/html, note: SPA catch-all HTML shell, not an agent card}

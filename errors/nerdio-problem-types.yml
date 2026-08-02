@@ -1,0 +1,57 @@
+generated: '2026-08-01'
+method: derived
+source: openapi/nerdio-distributor-api-openapi.json
+docs: https://nmmhelp.getnerdio.com/hc/en-us/articles/26125597051277-Nerdio-Manager-Distributor-API-Getting-Started
+format: http-status
+notes: >-
+  Nerdio does not publish an RFC 9457 problem+json contract. The Distributor API
+  declares one uniform response set on every one of its nine operations, with a
+  plain-text description per status; the same table is restated in the Getting
+  Started documentation as the API's response-code contract. No error type URIs,
+  no machine-readable error codes, and no error-body schema are published, so no
+  `type:` URI column is derived here. Descriptions below are quoted verbatim from
+  the spec.
+envelope:
+  documented: false
+  note: >-
+    The OpenAPI declares no response content or schema for any status, so the shape
+    of the error body is undocumented.
+applies_to_operations: all 9 Distributor API operations
+problems:
+- status: 400
+  title: Bad request
+  description: Bad request. Invalid parameters or invalid parameter.
+  remediation: >-
+    Check the path, query and header parameters. The docs call out an incorrect
+    version number in the api-v{version} path segment as a typical cause.
+- status: 401
+  title: Unauthorized
+  description: Unauthorized. APIKey doesnot authorize you to retrieve the information requested.
+  remediation: Verify the APIKey header carries the key issued by Nerdio support.
+- status: 409
+  title: Conflict
+  description: Conflict. Another distributor has already registered NMM Installs by partner you are trying to register.
+  remediation: >-
+    Raised by POST /register when the partner's installs are already claimed by a
+    different distributor. Contact Nerdio support to resolve the claim.
+- status: 422
+  title: Unprocessable entity
+  description: Unprocessable entity. Azure subscription ID you specified is not valid or may not be a GUID.
+  remediation: Send SubscriptionID as a valid Azure subscription GUID.
+- status: 500
+  title: Internal server error
+  description: Internal server error. The information supplied in the parameters is incorrect.
+  remediation: >-
+    Documented as parameter-driven rather than purely server-side — re-check
+    parameter values (for example a non-GUID Azure Subscription ID) before retrying.
+empty_success_cases:
+- operation: GET /api-v{version}/invoices
+  status: 200
+  note: >-
+    Documented behaviour — when no usage information exists for the requested
+    period the API returns 200 with an empty body rather than an error.
+gaps:
+- No RFC 9457 application/problem+json media type.
+- No stable machine-readable error code or error type URI.
+- No response schema for any status, success or error.
+- No documented error catalog for the NME or NMM per-install REST APIs (their Swagger is served only from a customer's own install).

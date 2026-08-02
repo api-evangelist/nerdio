@@ -1,0 +1,79 @@
+generated: '2026-08-01'
+method: searched
+source: openapi/nerdio-distributor-api-openapi.json
+docs: https://nmehelp.getnerdio.com/hc/en-us/articles/26124297445901-Getting-Started-with-REST-API-Integration
+notes: >-
+  Nerdio runs two distinct authentication models. The public Distributor API uses a
+  static APIKey request header issued by Nerdio support. The customer-deployed NME
+  and NMM REST APIs use OAuth2 client credentials against Microsoft Entra ID: enabling
+  the API in the product provisions a client application under the nerdio-nmw-app
+  (NME) / nerdio-nmm-app (NMM) app registration in the customer's own tenant, and
+  calls carry a bearer token acquired for the install's Application ID URI with the
+  .default scope. The distributor OpenAPI declares the API key as a required header
+  PARAMETER rather than a components.securitySchemes entry, so the mechanical
+  securityScheme derivation yields nothing; this file is written from the spec
+  parameters plus the published docs.
+summary:
+  types: [apiKey, oauth2]
+  api_key_in: [header]
+  oauth2_flows: [clientCredentials]
+  identity_provider: Microsoft Entra ID (per-customer tenant)
+schemes:
+- name: APIKey
+  type: apiKey
+  in: header
+  parameter_name: APIKey
+  api: Nerdio Manager Distributor API
+  required: true
+  description: >-
+    API key for authentication. Mandatory on every Distributor API endpoint. Issued
+    by Nerdio on request to nmm.support@getnerdio.com along with access to the
+    Mothership licensing portal.
+  sources: [openapi/nerdio-distributor-api-openapi.json]
+  docs: https://nmmhelp.getnerdio.com/hc/en-us/articles/26125597051277-Nerdio-Manager-Distributor-API-Getting-Started
+  operational_notes:
+  - Nerdio states it may apply IP allow-listing in future to further protect the key.
+  - A 401 Unauthorized is returned when the key does not authorize the request.
+- name: EntraIdClientCredentials
+  type: oauth2
+  flow: clientCredentials
+  api: Nerdio Manager for Enterprise REST API
+  identity_provider: Microsoft Entra ID
+  token_url: https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/token
+  scope: api://{nerdio-nmw-app-application-id}/.default
+  credentials:
+  - client_id
+  - client_secret
+  - tenant_id
+  provisioning: >-
+    System > Settings > Integrations > REST API. Step 1 creates a new Azure
+    application under the existing nerdio-nmw-app app registration; step 2 grants
+    admin consent for the assigned permissions; step 3 generates the client secret.
+    The application's Application ID URI must be set (api://<app_id>) and the
+    manifest accessTokenAcceptedVersion set to 2.
+  authorization_model: Entra ID app role (RestClient) assigned to the calling application
+  sources: [https://nmehelp.getnerdio.com/hc/en-us/articles/27422824784269-REST-API-Manual-Configuration]
+  docs: https://nmehelp.getnerdio.com/hc/en-us/articles/26124297445901-Getting-Started-with-REST-API-Integration
+- name: EntraIdClientCredentialsMsp
+  type: oauth2
+  flow: clientCredentials
+  api: Nerdio Manager for MSP Partner API
+  identity_provider: Microsoft Entra ID
+  token_url: https://login.microsoftonline.com/{tenantId}/oauth2/v2.0/token
+  scope: api://{nerdio-nmm-app-application-id}/.default
+  credentials:
+  - client_id
+  - client_secret
+  - tenant_id
+  provisioning: >-
+    At the MSP level, System > System Settings > Integrations > REST API. Creates a
+    client application under the nerdio-nmm-app app registration, grants admin
+    consent, and generates the client secret. Swagger on the install accepts the
+    client_id/client_secret pair via its Authorize dialog.
+  docs: https://nmmhelp.getnerdio.com/hc/en-us/articles/26125599431693-Nerdio-Manager-Partner-API-Getting-Started
+scopes:
+  model: >-
+    No published scope catalog. The NME and NMM APIs use the Entra ID application
+    .default scope for the install's own Application ID URI; granular authorization
+    is expressed as Entra app roles and Nerdio Manager RBAC roles inside the product,
+    not as OAuth scopes. scopes/ is therefore not emitted for this provider.

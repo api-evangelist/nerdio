@@ -1,0 +1,193 @@
+generated: '2026-08-01'
+method: derived
+source: openapi/nerdio-distributor-api-openapi.json
+also_derived_from: https://github.com/Get-Nerdio/NerdioManagerPowerShell/tree/main/documentation/cmdlets
+notes: >-
+  Two disjoint domains. The Distributor domain is derived from the published
+  Distributor API OpenAPI — which declares no components.schemas at all, so entities
+  and relationships are read from the path/parameter surface and the documented
+  response semantics rather than from schema $refs. The Nerdio Manager domain is
+  derived from the endpoint paths published for each cmdlet in the first-party
+  NerdioManagerPowerShell documentation; relationships are read from path nesting
+  (a nested path segment is a containment relationship). No entity, field or
+  relationship here is invented — anything not evidenced by a path or a documented
+  behaviour is omitted.
+domains:
+- domain: distributor
+  api: Nerdio Manager Distributor API
+  entities:
+  - name: Distributor
+    identified_by: APIKey (request header)
+    note: The calling principal. Not addressable as a resource.
+    relationships:
+    - {type: has_many, target: Install, via: registration}
+    - {type: has_many, target: Invoice}
+  - name: AzureSubscription
+    identified_by: SubscriptionID (GUID, query parameter)
+    note: >-
+      The join key for every mutating Distributor operation. register, suspend,
+      reactivate and cancel all act on ALL installs in a subscription, not on a
+      single install.
+    relationships:
+    - {type: has_many, target: Install, via: SubscriptionID}
+  - name: Install
+    identified_by: InstallID
+    source_operations: ['GET /api-v{version}/installs', 'POST /api-v{version}/register']
+    note: >-
+      A single Nerdio Manager for MSP deployment. Returned as an array because one
+      Azure subscription may carry multiple installs; the docs instruct integrators
+      to absorb multiple InstallIDs. States exercised by the API — registered,
+      suspended, reactivated, cancelled (cancel also suspends).
+    relationships:
+    - {type: belongs_to, target: AzureSubscription, via: SubscriptionID}
+    - {type: belongs_to, target: Partner}
+    - {type: belongs_to, target: Distributor, via: registration}
+  - name: Partner
+    note: The MSP that owns the install(s). Not directly addressable; surfaced as a grouping dimension on invoices.
+    relationships:
+    - {type: has_many, target: Install}
+    - {type: has_many, target: Account}
+  - name: Account
+    note: An MSP's end customer. Surfaced as a grouping dimension on GET /invoices/grouped.
+    relationships:
+    - {type: belongs_to, target: Partner}
+  - name: Invoice
+    source_operations: ['GET /api-v{version}/invoices', 'GET /api-v{version}/invoices/grouped']
+    note: >-
+      Monthly billing document, requested by period start/end in mm/dd/yyyy form and
+      matching the invoice shown in the Mothership portal. Empty period returns 200
+      with an empty body.
+    line_item_types:
+    - {type: AVD Users, meaning: End users assigned an AVD desktop, averaged over the calendar month}
+    - {type: Cloud PC-only Users, meaning: End users assigned a Windows 365 Cloud PC but not an AVD desktop, averaged over the calendar month}
+    - {type: Discount, meaning: Cost reduction applied to an account, partner (install) or distributor}
+    - {type: Price Control, meaning: A floor or ceiling applied to an account, partner or distributor}
+    - {type: Upcharge, meaning: Charges for services other than AVD and Cloud PC licences, applied at invoice level}
+    relationships:
+    - {type: belongs_to, target: Distributor}
+    - {type: has_many, target: InvoiceLineItem}
+    - {type: grouped_by, target: Partner, via: /invoices/grouped}
+    - {type: grouped_by, target: Account, via: /invoices/grouped}
+  - name: Usage
+    source_operations: ['GET /api-v{version}/usage']
+    note: Daily consumption information, as distinct from the monthly Invoice.
+    relationships:
+    - {type: belongs_to, target: Install}
+  - name: HealthStatus
+    source_operations: ['GET /api-v{version}/checkhealth']
+    note: Overall API health. No relationships.
+- domain: nerdio-manager
+  api: Nerdio Manager for Enterprise REST API
+  derivation: path nesting in the published cmdlet endpoint documentation
+  entities:
+  - name: Deployment
+    path: /api/v1/deployment/current
+    relationships:
+    - {type: has_many, target: LinkedSubscription}
+  - name: LinkedSubscription
+    path: /api/v1/subscriptions
+    relationships:
+    - {type: has_many, target: LinkedResourceGroup}
+    - {type: has_many, target: HostPool}
+  - name: LinkedResourceGroup
+    path: /api/v1/resourcegroup
+    relationships:
+    - {type: belongs_to, target: LinkedSubscription}
+  - name: Workspace
+    path: /api/v1/arm/workspace, /api/v1/workspace
+    relationships:
+    - {type: has_many, target: HostPool}
+    - {type: has_many, target: RbacAssignment}
+  - name: HostPool
+    path: /api/v1/arm/hostpool/{subscriptionId}/{resourceGroup}/{hostPoolName}
+    note: The dominant entity — 64 of 206 published cmdlets address it or a child of it.
+    relationships:
+    - {type: belongs_to, target: LinkedSubscription, via: subscriptionId}
+    - {type: belongs_to, target: LinkedResourceGroup, via: resourceGroup}
+    - {type: has_many, target: SessionHost}
+    - {type: has_one, target: AutoScaleConfiguration}
+    - {type: has_one, target: FsLogixConfiguration}
+    - {type: has_one, target: ActiveDirectoryConfiguration}
+    - {type: has_one, target: AvdProperties}
+    - {type: has_one, target: BackupProperties}
+    - {type: has_many, target: ScriptedActionProfile}
+    - {type: has_many, target: Usage}
+  - name: SessionHost
+    path: /api/v1/arm/hostpool/.../host
+    relationships:
+    - {type: belongs_to, target: HostPool}
+  - name: AutoScaleProfile
+    path: /api/v1/auto-scale-profile/{profileId}
+    relationships:
+    - {type: has_many, target: AutoScaleProfileAssignment, via: assignments}
+    - {type: assigned_to, target: HostPool}
+  - name: DesktopImage
+    path: /api/v1/desktop-image/{subscriptionId}/{resourceGroup}/{name}
+    relationships:
+    - {type: has_many, target: Schedule}
+    - {type: has_many, target: Job}
+  - name: AppAttachImage
+    path: /api/v1/app-attach/image/{imageId}
+    relationships:
+    - {type: has_many, target: AppAttachImageVersion, via: versions}
+    - {type: belongs_to, target: AppAttachStorageLocation}
+  - name: ShellApp
+    path: /api/v1/shell-app
+    relationships:
+    - {type: has_many, target: ShellAppVersion}
+  - name: AppManagementRepository
+    path: /api/v1/app-management/repository/{repoId}
+    relationships:
+    - {type: has_many, target: AppManagementRepositoryApp, via: app}
+  - name: AppManagementPolicy
+    path: /api/v1/app-management/policy/{onetime|recurrent}/{policyId}
+    relationships:
+    - {type: has_many, target: PolicySnapshot, via: state}
+    - {type: belongs_to, target: AppManagementAppGroup}
+  - name: ScriptedAction
+    path: /api/v1/scripted-actions/{id}
+    relationships:
+    - {type: belongs_to, target: ScriptedActionsGroup}
+    - {type: has_many, target: Schedule}
+    - {type: uses, target: SecureVariable}
+  - name: SecureVariable
+    path: /api/v1/secure-variable
+  - name: FileShare
+    path: /api/v1/storage
+    relationships:
+    - {type: has_one, target: FileShareAutoscale}
+    - {type: used_by, target: FsLogixProfile}
+  - name: FsLogixProfile
+    path: /api/v1/fslogix
+    relationships:
+    - {type: belongs_to, target: FileShare}
+  - name: NotificationCondition
+    path: /api/v1/notifications
+    relationships:
+    - {type: triggers, target: NotificationAction}
+  - name: NotificationAction
+    path: /api/v1/notifications
+    relationships:
+    - {type: delivers_to, target: LinkedNotificationMailbox}
+    - {type: delivers_to, target: LinkedNotificationWebhook}
+  - name: LinkedNotificationWebhook
+    path: /api/v1/notifications
+    see: asyncapi/nerdio-notifications-webhooks.yml
+  - name: RbacAssignment
+    path: /api/v1/users-and-roles/assignment/{objectId}
+    relationships:
+    - {type: scoped_to, target: Workspace}
+  - name: Job
+    path: /api/v1/job
+    note: Long-running operation handle returned by mutating operations.
+    relationships:
+    - {type: has_many, target: JobTask}
+    - {type: has_one, target: JobType}
+  - name: UserCostAttributionConfiguration
+    path: /api/v1/user-cost-attribution
+    relationships:
+    - {type: has_many, target: Report}
+gaps:
+- The Distributor OpenAPI declares no components.schemas, so no field-level model can be derived for it.
+- The NME entity graph is derived from published endpoint PATHS only; field names and types are not public (the Swagger document is served from a customer's own install).
+- No id-prefix convention is published for any Nerdio identifier.

@@ -1,0 +1,102 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for the Nerdio Manager Distributor API
+  version: 1.0.0
+extends: openapi/nerdio-distributor-api-openapi.json
+x-generated: '2026-08-01'
+x-method: generated
+x-source: openapi/nerdio-distributor-api-openapi.json
+x-notes: >-
+  Enhancements API Evangelist derives for the harvested Nerdio Distributor API. The
+  original spec at https://nmm-distributor-api.nerdio.net/swagger/v1/swagger.json is
+  never mutated. Everything added here is grounded in Nerdio's own published
+  documentation — the server URL and the APIKey security scheme come from the
+  Distributor API Getting Started article, operationIds are named from the operation
+  summaries the spec already carries, and the contact email is the one printed in
+  info.description.
+actions:
+- target: $.info
+  update:
+    contact:
+      name: Nerdio Manager for MSP support
+      email: nmm.support@getnerdio.com
+      url: https://nmmhelp.getnerdio.com/hc/en-us/sections/26125183873677-API
+    x-apievangelist-provider: nerdio
+    x-apievangelist-harvested: '2026-08-01'
+    x-apievangelist-source: https://nmm-distributor-api.nerdio.net/swagger/v1/swagger.json
+- target: $
+  update:
+    servers:
+    - url: https://nmm-distributor-api.nerdio.net
+      description: >-
+        Production host. Documented as "Direct all API calls to the following URL:
+        https://nmm-distributor-api.nerdio.net/api-v{version.number}". The original
+        document declares no servers[].
+- target: $
+  update:
+    components:
+      securitySchemes:
+        APIKey:
+          type: apiKey
+          in: header
+          name: APIKey
+          description: >-
+            API key issued by Nerdio on request to nmm.support@getnerdio.com.
+            Mandatory on every endpoint. The original document declares this as a
+            required header parameter on each operation rather than as a security
+            scheme.
+    security:
+    - APIKey: []
+- target: $.paths['/api-v{version}/checkhealth'].get
+  update:
+    operationId: checkHealth
+    x-apievangelist-category: health
+- target: $.paths['/api-v{version}/installs'].get
+  update:
+    operationId: listInstalls
+    x-apievangelist-category: read
+- target: $.paths['/api-v{version}/register'].post
+  update:
+    operationId: registerInstalls
+    x-apievangelist-category: write
+    x-apievangelist-consequence: >-
+      Claims every current and future NMM install in the supplied Azure
+      subscription for the calling distributor.
+- target: $.paths['/api-v{version}/suspend'].put
+  update:
+    operationId: suspendInstalls
+    x-apievangelist-category: write
+    x-apievangelist-consequence: >-
+      Blocks the partner MSP from logging in to every install in the subscription.
+      End users are documented as unaffected.
+- target: $.paths['/api-v{version}/reactivate'].put
+  update:
+    operationId: reactivateInstalls
+    x-apievangelist-category: write
+- target: $.paths['/api-v{version}/cancel'].delete
+  update:
+    operationId: cancelInstalls
+    x-apievangelist-category: write
+    x-apievangelist-consequence: >-
+      Removes the distributor assignment AND suspends the installs.
+- target: $.paths['/api-v{version}/invoices'].get
+  update:
+    operationId: getInvoices
+    x-apievangelist-category: read
+    x-apievangelist-note: >-
+      Documented behaviour — returns HTTP 200 with an empty body when no usage
+      exists for the requested period. Period start and end dates are mm/dd/yyyy.
+- target: $.paths['/api-v{version}/invoices/grouped'].get
+  update:
+    operationId: getInvoicesGrouped
+    x-apievangelist-category: read
+- target: $.paths['/api-v{version}/usage'].get
+  update:
+    operationId: getUsage
+    x-apievangelist-category: read
+x-gaps-observed:
+- No servers[] in the original document.
+- No operationId on any of the nine operations.
+- No components.schemas — no request or response bodies are modelled.
+- No securitySchemes; the API key is a bare required header parameter, and the "APIKey" parameter object carries no schema.
+- No examples in-spec (examples are published separately as a help-center article).
