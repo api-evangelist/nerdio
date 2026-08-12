@@ -123,6 +123,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: MCPServer
+  url: mcp/nerdio-mcp.yml
 - type: AgenticAccess
   url: agentic-access/nerdio-agentic-access.yml
 - type: DomainSecurity
