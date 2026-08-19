@@ -2,26 +2,27 @@ generated: '2026-08-01'
 method: derived
 status: candidate
 source: openapi/nerdio-distributor-api-openapi.json
-notes: >-
-  Nerdio publishes NO Model Context Protocol server. This is a CANDIDATE tool list
-  derived from the nine operations in the published Distributor API OpenAPI, kept as
-  a design input only. NO MCPServer pointer is wired into apis.yml, because no MCP
-  server exists — wiring one would credit Nerdio with an agent surface it does not
-  operate. Searched: Nerdio docs and help centers, the Get-Nerdio GitHub
-  organization (10 repositories, none MCP), npm @modelcontextprotocol scope, and
-  public MCP registries — no result. Nerdio does ship an in-product AI assistant
-  ("Nerdio Manager Copilot"), but it is not an MCP server and exposes no protocol
-  endpoint.
+notes: 'Nerdio publishes NO Model Context Protocol server. This is a CANDIDATE tool list derived from
+  the nine operations in the published Distributor API OpenAPI, kept as a design input only. NO MCPServer
+  pointer is wired into apis.yml, because no MCP server exists — wiring one would credit Nerdio with an
+  agent surface it does not operate. Searched: Nerdio docs and help centers, the Get-Nerdio GitHub organization
+  (10 repositories, none MCP), npm @modelcontextprotocol scope, and public MCP registries — no result.
+  Nerdio does ship an in-product AI assistant ("Nerdio Manager Copilot"), but it is not an MCP server
+  and exposes no protocol endpoint.'
 server:
   name: nerdio-distributor
   published: false
   transport: null
   url: null
 searched:
-- {surface: Nerdio help centers (nmehelp/nmmhelp), result: no MCP documentation}
-- {surface: 'https://github.com/Get-Nerdio', result: no MCP repository}
-- {surface: npm @modelcontextprotocol, result: no first-party package}
-- {surface: 'https://getnerdio.com/llms.txt', result: no MCP entry}
+- surface: Nerdio help centers (nmehelp/nmmhelp)
+  result: no MCP documentation
+- surface: https://github.com/Get-Nerdio
+  result: no MCP repository
+- surface: npm @modelcontextprotocol
+  result: no first-party package
+- surface: https://getnerdio.com/llms.txt
+  result: no MCP entry
 tools:
 - name: check_health
   description: Evaluate overall health of the Distributor API.
@@ -51,7 +52,12 @@ tools:
   description: Collect daily usage information.
   source_operation: openapi/nerdio-distributor-api-openapi.json#GET /api-v{version}/usage
 risk_notes:
-- >-
-  register, suspend, reactivate and cancel act on EVERY install in the supplied
-  Azure subscription and directly affect a partner MSP's ability to log in. Any
-  future agent exposure of these should be gated behind human confirmation.
+- register, suspend, reactivate and cancel act on EVERY install in the supplied Azure subscription and
+  directly affect a partner MSP's ability to log in. Any future agent exposure of these should be gated
+  behind human confirmation.
+deployment:
+  mode: none
+  verified: derived
+  tools: 9
+  checked: '2026-08-12'
+  source: catalog MCP census

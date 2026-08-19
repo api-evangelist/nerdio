@@ -1,0 +1,2948 @@
+{
+  "item": [
+    {
+      "id": "f2ecd1d0-ea90-4e7c-a181-2917c8276501",
+      "name": "Health",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8c4c5032-ab9e-40fd-845b-03853daef394",
+          "name": "Evaluate overall health of API.",
+          "request": {
+            "name": "Evaluate overall health of API.",
+            "description": {},
+            "url": {
+              "path": [
+                "api-v{{version}}",
+                "checkhealth"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) API key for authentication",
+                "key": "APIKey",
+                "value": ""
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e8a0cca7-4451-449d-9f90-2f2a5552bf83",
+              "name": "Ok. API call executed successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "checkhealth"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "12e4c377-9581-4887-9f71-ddd879779136",
+              "name": "Bad request. Invalid parameters or invalid parameter.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "checkhealth"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "95266316-abcd-45d7-97fe-cb438119932e",
+              "name": "Unauthorized. APIKey doesnot authorize you to retrieve the information requested.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "checkhealth"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "86fa7eb8-352b-4416-ba7e-72761d4cd0f2",
+              "name": "Conflict. Another distributor has already registered NMM Installs by partner you are trying to register.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "checkhealth"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6baea362-f87c-43d0-87ee-c25e9a541191",
+              "name": "Unprocessable entity. Azure subscription ID you specified is not valid or may not be a GUID.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "checkhealth"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6ec1ee23-63ae-4a93-b08d-c0690674ed0f",
+              "name": "Internal server error. The information supplied in the parameters is incorrect.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "checkhealth"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "dc6b992e-12f7-406c-82dc-9fd0a93db23d",
+      "name": "Install",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0d0b45ff-6bc1-4ca7-a9e5-5c8cd65ff8fe",
+          "name": "Retrieve a list of all NMM installs you have registered via API or Mothership.",
+          "request": {
+            "name": "Retrieve a list of all NMM installs you have registered via API or Mothership.",
+            "description": {},
+            "url": {
+              "path": [
+                "api-v{{version}}",
+                "installs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) API key for authentication",
+                "key": "APIKey",
+                "value": ""
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c528d2be-6407-4cc9-a9a8-90e5ed725b55",
+              "name": "Ok. API call executed successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "installs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "23f37831-bcc4-47ff-8f11-ef447fced362",
+              "name": "Bad request. Invalid parameters or invalid parameter.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "installs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4c8cbbe9-81b9-4a4d-a264-650f09527dd7",
+              "name": "Unauthorized. APIKey doesnot authorize you to retrieve the information requested.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "installs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cd91bc4f-5a93-4d50-a29d-b3a423b871d2",
+              "name": "Conflict. Another distributor has already registered NMM Installs by partner you are trying to register.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "installs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "6c8d7c12-e7a5-41fd-9615-4fde38f981d0",
+              "name": "Unprocessable entity. Azure subscription ID you specified is not valid or may not be a GUID.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "installs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "63c4044e-3525-4cba-ab99-49b17da8110f",
+              "name": "Internal server error. The information supplied in the parameters is incorrect.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "installs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3878c47c-ea68-45db-b1f1-3da23e2dda6f",
+          "name": "Claim a MSP partner's existing and future NMM installs in their Azure Subscription. This API is typically used when partner purchases NMM in your portal.",
+          "request": {
+            "name": "Claim a MSP partner's existing and future NMM installs in their Azure Subscription. This API is typically used when partner purchases NMM in your portal.",
+            "description": {},
+            "url": {
+              "path": [
+                "api-v{{version}}",
+                "register"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "SubscriptionID",
+                  "value": "<string>",
+                  "description": "(Required) Azure Subscription ID"
+                },
+                {
+                  "disabled": false,
+                  "key": "SendConfirmationEmail",
+                  "value": "<boolean>",
+                  "description": "Notify partner their NMM install has been assigned to distributor"
+                },
+                {
+                  "disabled": false,
+                  "key": "ConnectAssetId",
+                  "value": "<string>",
+                  "description": "Connect Asset ID"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) API key for authentication",
+                "key": "APIKey",
+                "value": ""
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "330d157b-27d3-4323-9fb0-9f9706bad396",
+              "name": "Ok. API call executed successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "register"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "SubscriptionID",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "SendConfirmationEmail",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "ConnectAssetId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b2f38a26-8d10-496e-a4cd-630adfee0416",
+              "name": "Bad request. Invalid parameters or invalid parameter.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "register"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "SubscriptionID",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "SendConfirmationEmail",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "ConnectAssetId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3f0a6296-309c-40af-a310-6448387cbf44",
+              "name": "Unauthorized. APIKey doesnot authorize you to retrieve the information requested.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "register"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "SubscriptionID",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "SendConfirmationEmail",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "ConnectAssetId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1b5e2593-0c83-46e0-96ab-fae2f0bbab20",
+              "name": "Conflict. Another distributor has already registered NMM Installs by partner you are trying to register.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "register"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "SubscriptionID",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "SendConfirmationEmail",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "ConnectAssetId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9e1dd6a6-ed6a-427a-bd25-2c3daadf0d23",
+              "name": "Unprocessable entity. Azure subscription ID you specified is not valid or may not be a GUID.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "register"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "SubscriptionID",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "SendConfirmationEmail",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "ConnectAssetId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "54cf94b3-45cb-47ac-9ab7-3ab6bccf362a",
+              "name": "Internal server error. The information supplied in the parameters is incorrect.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "register"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "SubscriptionID",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "SendConfirmationEmail",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "ConnectAssetId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5be39ecb-85ff-4182-b90e-24cf19e761cf",
+          "name": "Suspend all installs in an Azure subscription. This API is typically used to temporarily halt usage for non-payment. MSP will not be able to login to suspended NMM installs. End-users will not be affected.",
+          "request": {
+            "name": "Suspend all installs in an Azure subscription. This API is typically used to temporarily halt usage for non-payment. MSP will not be able to login to suspended NMM installs. End-users will not be affected.",
+            "description": {},
+            "url": {
+              "path": [
+                "api-v{{version}}",
+                "suspend"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "SubscriptionID",
+                  "value": "<string>",
+                  "description": "(Required) Azure Subscription ID"
+                },
+                {
+                  "disabled": false,
+                  "key": "SendConfirmationEmail",
+                  "value": "<boolean>",
+                  "description": "Notify partner their NMM install has been assigned to distributor"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) API key for authentication",
+                "key": "APIKey",
+                "value": ""
+              }
+            ],
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9f6a77c9-98cb-4f49-af60-7a16a4fb6a0b",
+              "name": "Ok. API call executed successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "suspend"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "SubscriptionID",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "SendConfirmationEmail",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f7e9e4d7-3f8e-4f67-9256-e7d516b1af0c",
+              "name": "Bad request. Invalid parameters or invalid parameter.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "suspend"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "SubscriptionID",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "SendConfirmationEmail",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8283b26c-66d6-4610-9247-693fc22bdae8",
+              "name": "Unauthorized. APIKey doesnot authorize you to retrieve the information requested.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "suspend"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "SubscriptionID",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "SendConfirmationEmail",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a0769a77-697a-4e5d-9221-6eea49d6f9f4",
+              "name": "Conflict. Another distributor has already registered NMM Installs by partner you are trying to register.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "suspend"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "SubscriptionID",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "SendConfirmationEmail",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c661cfd2-ef5e-4f85-b5e8-9d2886f1c6ec",
+              "name": "Unprocessable entity. Azure subscription ID you specified is not valid or may not be a GUID.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "suspend"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "SubscriptionID",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "SendConfirmationEmail",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "57022a65-f32a-436b-816e-1f9b6329e522",
+              "name": "Internal server error. The information supplied in the parameters is incorrect.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "suspend"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "SubscriptionID",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "SendConfirmationEmail",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a057c76c-31b3-4eca-966c-9ca76447cd6c",
+          "name": "Unsuspend all installs in an Azure subscription. This API is typically used to remove the temporary halt for non-payment.",
+          "request": {
+            "name": "Unsuspend all installs in an Azure subscription. This API is typically used to remove the temporary halt for non-payment.",
+            "description": {},
+            "url": {
+              "path": [
+                "api-v{{version}}",
+                "reactivate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "SubscriptionID",
+                  "value": "<string>",
+                  "description": "(Required) Azure Subscription ID"
+                },
+                {
+                  "disabled": false,
+                  "key": "SendConfirmationEmail",
+                  "value": "<boolean>",
+                  "description": "Notify partner their NMM install has been assigned to distributor"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) API key for authentication",
+                "key": "APIKey",
+                "value": ""
+              }
+            ],
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "12e346dc-7b43-497c-a364-24c94b96fa30",
+              "name": "Ok. API call executed successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "reactivate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "SubscriptionID",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "SendConfirmationEmail",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "14676b78-fc44-4182-9c4c-873a7ac39f0e",
+              "name": "Bad request. Invalid parameters or invalid parameter.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "reactivate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "SubscriptionID",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "SendConfirmationEmail",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "62465d47-7fc1-4592-99c4-73087fb21192",
+              "name": "Unauthorized. APIKey doesnot authorize you to retrieve the information requested.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "reactivate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "SubscriptionID",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "SendConfirmationEmail",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "53442e06-200e-4242-9639-08d3b01a4b61",
+              "name": "Conflict. Another distributor has already registered NMM Installs by partner you are trying to register.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "reactivate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "SubscriptionID",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "SendConfirmationEmail",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3628a6f3-2477-48b7-9ec8-b0d7c49024ff",
+              "name": "Unprocessable entity. Azure subscription ID you specified is not valid or may not be a GUID.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "reactivate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "SubscriptionID",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "SendConfirmationEmail",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "160218dc-33ea-4d04-bcc2-0a91cebaaba6",
+              "name": "Internal server error. The information supplied in the parameters is incorrect.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "reactivate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "SubscriptionID",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "SendConfirmationEmail",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "df5559cc-78da-4c50-a8a7-3550c951644e",
+          "name": "Unregister previously claimed partner NMM installs and suspend those installs. This API is typically used when partner cancels purchase of NMM in your portal.",
+          "request": {
+            "name": "Unregister previously claimed partner NMM installs and suspend those installs. This API is typically used when partner cancels purchase of NMM in your portal.",
+            "description": {},
+            "url": {
+              "path": [
+                "api-v{{version}}",
+                "cancel"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "SubscriptionID",
+                  "value": "<string>",
+                  "description": "(Required) Azure Subscription ID"
+                },
+                {
+                  "disabled": false,
+                  "key": "SendConfirmationEmail",
+                  "value": "<boolean>",
+                  "description": "Notify partner their NMM install is suspended and no longer registered with distributor."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) API key for authentication",
+                "key": "APIKey",
+                "value": ""
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fef07597-1dda-4ced-928b-6b449ffb2f14",
+              "name": "Ok. API call executed successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "SubscriptionID",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "SendConfirmationEmail",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c0f404a4-ed3b-43cf-a6a6-8b723f77eabd",
+              "name": "Bad request. Invalid parameters or invalid parameter.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "SubscriptionID",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "SendConfirmationEmail",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2f7ebebf-0846-42de-974e-f55b18f5a3d6",
+              "name": "Unauthorized. APIKey doesnot authorize you to retrieve the information requested.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "SubscriptionID",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "SendConfirmationEmail",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "07d29c89-e37a-44e4-b801-7d0247b8b7a3",
+              "name": "Conflict. Another distributor has already registered NMM Installs by partner you are trying to register.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "SubscriptionID",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "SendConfirmationEmail",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a3298c81-6f71-4bf9-9e6a-131f11e6ecf9",
+              "name": "Unprocessable entity. Azure subscription ID you specified is not valid or may not be a GUID.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "SubscriptionID",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "SendConfirmationEmail",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "82d35694-439d-4acc-b74b-30ad474d3f51",
+              "name": "Internal server error. The information supplied in the parameters is incorrect.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "SubscriptionID",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "SendConfirmationEmail",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "2b5ebb9b-d489-4968-8c19-592085aafc24",
+      "name": "Invoices",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6398aaf7-c4d8-4e13-9ba6-226645e631ee",
+          "name": "Collect consumption information. This API is typically used for monthly billing.",
+          "request": {
+            "name": "Collect consumption information. This API is typically used for monthly billing.",
+            "description": {},
+            "url": {
+              "path": [
+                "api-v{{version}}",
+                "invoices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "PeriodStart",
+                  "value": "<dateTime>",
+                  "description": "Start Date (first day of month in mm/dd/yyyy format)"
+                },
+                {
+                  "disabled": false,
+                  "key": "PeriodEnd",
+                  "value": "<dateTime>",
+                  "description": "End Date (last day of month in mm/dd/yyyy format)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) API key for authentication",
+                "key": "APIKey",
+                "value": ""
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "96fd046b-5e09-4558-94c4-cfc3c7fcc117",
+              "name": "Ok. API call executed successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "invoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "PeriodStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "PeriodEnd",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8d161444-67a9-4e40-9c79-e6cf8868723f",
+              "name": "Bad request. Invalid parameters or invalid parameter.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "invoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "PeriodStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "PeriodEnd",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "91cfa8e1-7d3f-4786-92fa-d249db762502",
+              "name": "Unauthorized. APIKey doesnot authorize you to retrieve the information requested.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "invoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "PeriodStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "PeriodEnd",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "164cf2ad-7bcd-436e-9188-2e261f28a7fc",
+              "name": "Conflict. Another distributor has already registered NMM Installs by partner you are trying to register.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "invoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "PeriodStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "PeriodEnd",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "9cdda4e2-9727-4dfd-8ba1-b0935ba2d5e1",
+              "name": "Unprocessable entity. Azure subscription ID you specified is not valid or may not be a GUID.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "invoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "PeriodStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "PeriodEnd",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1aa76d54-d052-4663-a721-2ab0959ecb45",
+              "name": "Internal server error. The information supplied in the parameters is incorrect.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "invoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "PeriodStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "PeriodEnd",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "985d18d2-6af5-44a1-8df3-c9b39e74b689",
+          "name": "Collect consumption information grouped by partner and account. This API is typically used for monthly billing.",
+          "request": {
+            "name": "Collect consumption information grouped by partner and account. This API is typically used for monthly billing.",
+            "description": {},
+            "url": {
+              "path": [
+                "api-v{{version}}",
+                "invoices",
+                "grouped"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "PeriodStart",
+                  "value": "<dateTime>",
+                  "description": "Start Date (first day of month in mm/dd/yyyy format)"
+                },
+                {
+                  "disabled": false,
+                  "key": "PeriodEnd",
+                  "value": "<dateTime>",
+                  "description": "End Date (last day of month in mm/dd/yyyy format)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) API key for authentication",
+                "key": "APIKey",
+                "value": ""
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1dd3ff38-0006-4ac5-af61-01f37202abe8",
+              "name": "Ok. API call executed successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "invoices",
+                    "grouped"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "PeriodStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "PeriodEnd",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "42227a72-8fcd-4b47-963c-d00b5e71f254",
+              "name": "Bad request. Invalid parameters or invalid parameter.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "invoices",
+                    "grouped"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "PeriodStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "PeriodEnd",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "67321a57-71ee-4c70-bf5c-b48993c367b9",
+              "name": "Unauthorized. APIKey doesnot authorize you to retrieve the information requested.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "invoices",
+                    "grouped"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "PeriodStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "PeriodEnd",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5779072d-a4db-4611-b765-4458ab78968f",
+              "name": "Conflict. Another distributor has already registered NMM Installs by partner you are trying to register.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "invoices",
+                    "grouped"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "PeriodStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "PeriodEnd",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0a689baf-2d4a-4961-9254-0610577abe23",
+              "name": "Unprocessable entity. Azure subscription ID you specified is not valid or may not be a GUID.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "invoices",
+                    "grouped"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "PeriodStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "PeriodEnd",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cdc7009c-b587-44af-817d-e58f1c805caf",
+              "name": "Internal server error. The information supplied in the parameters is incorrect.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "invoices",
+                    "grouped"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "PeriodStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "PeriodEnd",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "239c3732-ed53-4dc8-8e5d-06ca059f347d",
+      "name": "Usage",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "87e75bd5-38f1-4ae4-88fa-ba4aec9d1896",
+          "name": "Collect usage information. This API is typically used for daily usage information.",
+          "request": {
+            "name": "Collect usage information. This API is typically used for daily usage information.",
+            "description": {},
+            "url": {
+              "path": [
+                "api-v{{version}}",
+                "usage"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "PeriodStart",
+                  "value": "<dateTime>",
+                  "description": "Start Date (any day of month in mm/dd/yyyy format)"
+                },
+                {
+                  "disabled": false,
+                  "key": "PeriodEnd",
+                  "value": "<dateTime>",
+                  "description": "End Date (any day of same month in mm/dd/yyyy format)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "disabled": false,
+                "description": "(Required) API key for authentication",
+                "key": "APIKey",
+                "value": ""
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3ce38275-926a-44a6-84fe-b4148755309f",
+              "name": "Ok. API call executed successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "usage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "PeriodStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "PeriodEnd",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "93d7a3fe-bf37-47b2-8891-056cac97a367",
+              "name": "Bad request. Invalid parameters or invalid parameter.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "usage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "PeriodStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "PeriodEnd",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0971a884-5d91-4a87-a082-1eba8298d391",
+              "name": "Unauthorized. APIKey doesnot authorize you to retrieve the information requested.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "usage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "PeriodStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "PeriodEnd",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "34603832-b15f-4e87-b2f0-0009a9672cd5",
+              "name": "Conflict. Another distributor has already registered NMM Installs by partner you are trying to register.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "usage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "PeriodStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "PeriodEnd",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "df65974c-bd20-4954-aec6-39c99e1c08ee",
+              "name": "Unprocessable entity. Azure subscription ID you specified is not valid or may not be a GUID.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "usage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "PeriodStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "PeriodEnd",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "11db0a3d-e42f-4cdf-b339-3bd55fbcb60b",
+              "name": "Internal server error. The information supplied in the parameters is incorrect.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api-v{{version}}",
+                    "usage"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "PeriodStart",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "PeriodEnd",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "disabled": false,
+                    "description": "(Required) API key for authentication",
+                    "key": "APIKey",
+                    "value": ""
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "/",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) API Version",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "version"
+    }
+  ],
+  "info": {
+    "_postman_id": "60a3df23-a95e-42db-a6c8-95114a16ec73",
+    "name": "NMM Distributor API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Distributor APIs to register, cancel, suspend NMM Installs and retrieve usage information. Contact nmm.support@getnerdio.com to request APIKey and access to Mothership portal.",
+      "type": "text/plain"
+    }
+  }
+}

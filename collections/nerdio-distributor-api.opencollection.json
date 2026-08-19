@@ -1,0 +1,357 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "NMM Distributor API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Health",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Evaluate overall health of API.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api-v:version/checkhealth",
+            "headers": [
+              {
+                "name": "APIKey",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "version",
+                "value": "",
+                "type": "path",
+                "description": "API Version"
+              }
+            ]
+          },
+          "docs": "Evaluate overall health of API."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Install",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve a list of all NMM installs you have registered via API or Mothership.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api-v:version/installs",
+            "headers": [
+              {
+                "name": "APIKey",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "version",
+                "value": "",
+                "type": "path",
+                "description": "API Version"
+              }
+            ]
+          },
+          "docs": "Retrieve a list of all NMM installs you have registered via API or Mothership."
+        },
+        {
+          "info": {
+            "name": "Claim a MSP partner's existing and future NMM installs in their Azure Subscription. This API is typically used when partner purchases NMM in your portal.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/api-v:version/register",
+            "headers": [
+              {
+                "name": "APIKey",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "SubscriptionID",
+                "value": "",
+                "type": "query",
+                "description": "Azure Subscription ID"
+              },
+              {
+                "name": "SendConfirmationEmail",
+                "value": "",
+                "type": "query",
+                "description": "Notify partner their NMM install has been assigned to distributor"
+              },
+              {
+                "name": "ConnectAssetId",
+                "value": "",
+                "type": "query",
+                "description": "Connect Asset ID"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "path",
+                "description": "API Version"
+              }
+            ]
+          },
+          "docs": "Claim a MSP partner's existing and future NMM installs in their Azure Subscription. This API is typically used when partner purchases NMM in your portal."
+        },
+        {
+          "info": {
+            "name": "Suspend all installs in an Azure subscription. This API is typically used to temporarily halt usage for non-payment. MSP will not be able to login to suspended NMM installs. End-users will not be affected.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api-v:version/suspend",
+            "headers": [
+              {
+                "name": "APIKey",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "SubscriptionID",
+                "value": "",
+                "type": "query",
+                "description": "Azure Subscription ID"
+              },
+              {
+                "name": "SendConfirmationEmail",
+                "value": "",
+                "type": "query",
+                "description": "Notify partner their NMM install has been assigned to distributor"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "path",
+                "description": "API Version"
+              }
+            ]
+          },
+          "docs": "Suspend all installs in an Azure subscription. This API is typically used to temporarily halt usage for non-payment. MSP will not be able to login to suspended NMM installs. End-users will not be affected."
+        },
+        {
+          "info": {
+            "name": "Unsuspend all installs in an Azure subscription. This API is typically used to remove the temporary halt for non-payment.",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/api-v:version/reactivate",
+            "headers": [
+              {
+                "name": "APIKey",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "SubscriptionID",
+                "value": "",
+                "type": "query",
+                "description": "Azure Subscription ID"
+              },
+              {
+                "name": "SendConfirmationEmail",
+                "value": "",
+                "type": "query",
+                "description": "Notify partner their NMM install has been assigned to distributor"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "path",
+                "description": "API Version"
+              }
+            ]
+          },
+          "docs": "Unsuspend all installs in an Azure subscription. This API is typically used to remove the temporary halt for non-payment."
+        },
+        {
+          "info": {
+            "name": "Unregister previously claimed partner NMM installs and suspend those installs. This API is typically used when partner cancels purchase of NMM in your portal.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/api-v:version/cancel",
+            "headers": [
+              {
+                "name": "APIKey",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "SubscriptionID",
+                "value": "",
+                "type": "query",
+                "description": "Azure Subscription ID"
+              },
+              {
+                "name": "SendConfirmationEmail",
+                "value": "",
+                "type": "query",
+                "description": "Notify partner their NMM install is suspended and no longer registered with distributor."
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "path",
+                "description": "API Version"
+              }
+            ]
+          },
+          "docs": "Unregister previously claimed partner NMM installs and suspend those installs. This API is typically used when partner cancels purchase of NMM in your portal."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Invoices",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Collect consumption information. This API is typically used for monthly billing.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api-v:version/invoices",
+            "headers": [
+              {
+                "name": "APIKey",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "PeriodStart",
+                "value": "",
+                "type": "query",
+                "description": "Start Date (first day of month in mm/dd/yyyy format)"
+              },
+              {
+                "name": "PeriodEnd",
+                "value": "",
+                "type": "query",
+                "description": "End Date (last day of month in mm/dd/yyyy format)"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "path",
+                "description": "API Version"
+              }
+            ]
+          },
+          "docs": "Collect consumption information. This API is typically used for monthly billing."
+        },
+        {
+          "info": {
+            "name": "Collect consumption information grouped by partner and account. This API is typically used for monthly billing.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api-v:version/invoices/grouped",
+            "headers": [
+              {
+                "name": "APIKey",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "PeriodStart",
+                "value": "",
+                "type": "query",
+                "description": "Start Date (first day of month in mm/dd/yyyy format)"
+              },
+              {
+                "name": "PeriodEnd",
+                "value": "",
+                "type": "query",
+                "description": "End Date (last day of month in mm/dd/yyyy format)"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "path",
+                "description": "API Version"
+              }
+            ]
+          },
+          "docs": "Collect consumption information grouped by partner and account. This API is typically used for monthly billing."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Usage",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Collect usage information. This API is typically used for daily usage information.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api-v:version/usage",
+            "headers": [
+              {
+                "name": "APIKey",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "PeriodStart",
+                "value": "",
+                "type": "query",
+                "description": "Start Date (any day of month in mm/dd/yyyy format)"
+              },
+              {
+                "name": "PeriodEnd",
+                "value": "",
+                "type": "query",
+                "description": "End Date (any day of same month in mm/dd/yyyy format)"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "path",
+                "description": "API Version"
+              }
+            ]
+          },
+          "docs": "Collect usage information. This API is typically used for daily usage information."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
