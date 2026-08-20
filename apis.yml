@@ -107,6 +107,11 @@ apis:
     Azure App Service. There is no single Nerdio-operated host for this API.'
   tags:
   - Managed Service Providers
+  - Multi-Tenant
+  - Host Pools
+  - Automation
+  tags_raw:
+  - Managed Service Providers
   - Multi-tenant
   - Host Pools
   - Automation
