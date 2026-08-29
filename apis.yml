@@ -14,6 +14,18 @@ description: 'Nerdio (Nerdio, Inc., founded 2017, Chicago) builds automation and
   partner installs and to pull usage and invoice data. Nerdio publishes a first-party
   PowerShell module generated from the NME API specification with AutoRest.'
 url: https://raw.githubusercontent.com/api-evangelist/nerdio/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://getnerdio.com/wp-content/themes/nrd/assets/images/logo.svg
 x-type: company
 x-source: harvest:secondary-market
