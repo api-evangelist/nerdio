@@ -1,0 +1,37 @@
+openapi: 3.2.0
+info:
+  title: NMM Distributor Health API
+  description: Distributor APIs to register, cancel, suspend NMM Installs and retrieve usage information. Contact nmm.support@getnerdio.com to request APIKey and access to Mothership portal.
+  version: v1
+tags:
+- name: Health
+paths:
+  /api-v{version}/checkhealth:
+    get:
+      tags:
+      - Health
+      summary: Evaluate overall health of API.
+      parameters:
+      - name: version
+        in: path
+        description: API Version
+        required: true
+        schema:
+          type: string
+      - name: APIKey
+        in: header
+        description: API key for authentication
+        required: true
+      responses:
+        '200':
+          description: Ok. API call executed successfully.
+        '400':
+          description: Bad request. Invalid parameters or invalid parameter.
+        '401':
+          description: Unauthorized. APIKey doesnot authorize you to retrieve the information requested.
+        '422':
+          description: Unprocessable entity. Azure subscription ID you specified is not valid or may not be a GUID.
+        '500':
+          description: Internal server error. The information supplied in the parameters is incorrect.
+        '409':
+          description: Conflict. Another distributor has already registered NMM Installs by partner you are trying to register.
