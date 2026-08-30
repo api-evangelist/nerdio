@@ -95,7 +95,7 @@ apis:
     Nerdio-operated host for this API.
   tags:
   - Managed Service Providers
-  - Multi-Tenant
+  - Multi-tenant
   - Host Pools
   - Automation
   tags_raw:
