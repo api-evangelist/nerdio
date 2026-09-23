@@ -10,7 +10,7 @@ paths:
     get:
       tags:
       - Usage
-      summary: Collect usage information. This API is typically used for daily usage information.
+      summary: Collect usage information.
       parameters:
       - name: PeriodStart
         in: query
@@ -47,3 +47,5 @@ paths:
           description: Internal server error. The information supplied in the parameters is incorrect.
         '409':
           description: Conflict. Another distributor has already registered NMM Installs by partner you are trying to register.
+      operationId: getApiV{version}Usage
+      x-operation-id-source: derived

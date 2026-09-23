@@ -10,7 +10,7 @@ paths:
     get:
       tags:
       - Invoices
-      summary: Collect consumption information. This API is typically used for monthly billing.
+      summary: Collect consumption information. This API is typically used for monthly billing
       parameters:
       - name: PeriodStart
         in: query
@@ -47,11 +47,13 @@ paths:
           description: Internal server error. The information supplied in the parameters is incorrect.
         '409':
           description: Conflict. Another distributor has already registered NMM Installs by partner you are trying to register.
+      operationId: getApiV{version}Invoices
+      x-operation-id-source: derived
   /api-v{version}/invoices/grouped:
     get:
       tags:
       - Invoices
-      summary: Collect consumption information grouped by partner and account. This API is typically used for monthly billing.
+      summary: Collect consumption information grouped by partner and account.
       parameters:
       - name: PeriodStart
         in: query
@@ -88,3 +90,5 @@ paths:
           description: Internal server error. The information supplied in the parameters is incorrect.
         '409':
           description: Conflict. Another distributor has already registered NMM Installs by partner you are trying to register.
+      operationId: getApiV{version}InvoicesGrouped
+      x-operation-id-source: derived

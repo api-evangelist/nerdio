@@ -10,7 +10,7 @@ paths:
     get:
       tags:
       - Install
-      summary: Retrieve a list of all NMM installs you have registered via API or Mothership.
+      summary: Retrieve a list of all NMM installs you have registered via API or Mothership
       parameters:
       - name: version
         in: path
@@ -35,11 +35,13 @@ paths:
           description: Internal server error. The information supplied in the parameters is incorrect.
         '409':
           description: Conflict. Another distributor has already registered NMM Installs by partner you are trying to register.
+      operationId: getApiV{version}Installs
+      x-operation-id-source: derived
   /api-v{version}/register:
     post:
       tags:
       - Install
-      summary: Claim a MSP partner's existing and future NMM installs in their Azure Subscription. This API is typically used when partner purchases NMM in your portal.
+      summary: Claim a MSP partner's existing and future NMM installs in their Azure…
       parameters:
       - name: SubscriptionID
         in: query
@@ -80,11 +82,13 @@ paths:
           description: Internal server error. The information supplied in the parameters is incorrect.
         '409':
           description: Conflict. Another distributor has already registered NMM Installs by partner you are trying to register.
+      operationId: postApiV{version}Register
+      x-operation-id-source: derived
   /api-v{version}/suspend:
     put:
       tags:
       - Install
-      summary: Suspend all installs in an Azure subscription. This API is typically used to temporarily halt usage for non-payment. MSP will not be able to login to suspended NMM installs. End-users will not be affected.
+      summary: Suspend all installs in an Azure subscription.
       parameters:
       - name: SubscriptionID
         in: query
@@ -120,11 +124,13 @@ paths:
           description: Internal server error. The information supplied in the parameters is incorrect.
         '409':
           description: Conflict. Another distributor has already registered NMM Installs by partner you are trying to register.
+      operationId: putApiV{version}Suspend
+      x-operation-id-source: derived
   /api-v{version}/reactivate:
     put:
       tags:
       - Install
-      summary: Unsuspend all installs in an Azure subscription. This API is typically used to remove the temporary halt for non-payment.
+      summary: Unsuspend all installs in an Azure subscription.
       parameters:
       - name: SubscriptionID
         in: query
@@ -160,11 +166,13 @@ paths:
           description: Internal server error. The information supplied in the parameters is incorrect.
         '409':
           description: Conflict. Another distributor has already registered NMM Installs by partner you are trying to register.
+      operationId: putApiV{version}Reactivate
+      x-operation-id-source: derived
   /api-v{version}/cancel:
     delete:
       tags:
       - Install
-      summary: Unregister previously claimed partner NMM installs and suspend those installs. This API is typically used when partner cancels purchase of NMM in your portal.
+      summary: Unregister previously claimed partner NMM installs and suspend those installs.
       parameters:
       - name: SubscriptionID
         in: query
@@ -200,3 +208,5 @@ paths:
           description: Internal server error. The information supplied in the parameters is incorrect.
         '409':
           description: Conflict. Another distributor has already registered NMM Installs by partner you are trying to register.
+      operationId: deleteApiV{version}Cancel
+      x-operation-id-source: derived

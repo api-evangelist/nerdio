@@ -1,0 +1,30 @@
+{
+  "provider": "nerdio",
+  "sources": [
+    "_original/nerdio-distributor-api-openapi.json"
+  ],
+  "outputs": [
+    "nerdio-health-api-openapi.yml",
+    "nerdio-install-api-openapi.yml",
+    "nerdio-invoices-api-openapi.yml",
+    "nerdio-usage-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "nerdio-distributor-api-openapi.json: upgraded openapi 3.0.1 -> OpenAPI 3.2.0",
+    "nerdio-distributor-api-openapi.json: declared missing tag: Health",
+    "nerdio-distributor-api-openapi.json: declared missing tag: Install",
+    "nerdio-distributor-api-openapi.json: declared missing tag: Invoices",
+    "nerdio-distributor-api-openapi.json: declared missing tag: Usage",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "nerdio-health-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "nerdio-install-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "nerdio-invoices-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "nerdio-usage-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
+}

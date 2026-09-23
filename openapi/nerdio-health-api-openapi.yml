@@ -10,7 +10,7 @@ paths:
     get:
       tags:
       - Health
-      summary: Evaluate overall health of API.
+      summary: Evaluate overall health of API
       parameters:
       - name: version
         in: path
@@ -35,3 +35,5 @@ paths:
           description: Internal server error. The information supplied in the parameters is incorrect.
         '409':
           description: Conflict. Another distributor has already registered NMM Installs by partner you are trying to register.
+      operationId: getApiV{version}Checkhealth
+      x-operation-id-source: derived
