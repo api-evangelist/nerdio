@@ -1,0 +1,36 @@
+slug: nerdio
+provider: Nerdio
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: Invoices
+  spec_file: nerdio-invoices-api-openapi.yml
+  capability_id: BC-4250
+  capability_id_l1: BC-4250
+  capability_name: Subscription Billing & Revenue Management
+  confidence: 0.75
+  evidence: '"Collect consumption information. This API is typically used for monthly billing"; "Collect
+    consumption information grouped by partner and account"'
+  reason: Exposes consumption data for monthly billing and invoice retrieval grouped by partner/account
+    — subscription billing and revenue management. Ambiguous between usage metering and invoicing/statement
+    delivery, so L2 is left null.
+- tag: Usage
+  spec_file: nerdio-usage-api-openapi.yml
+  capability_id: BC-4250.10
+  capability_id_l1: BC-4250
+  capability_name: Usage Metering
+  confidence: 0.7
+  evidence: GET /api-v{version}/usage — "Collect usage information."
+  reason: Single endpoint retrieving aggregated consumption/usage for the installed product, which is
+    the usage-metering feed underpinning rating and billing. Thin context (one operation, no schemas)
+    caps confidence.
