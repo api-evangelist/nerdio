@@ -1,0 +1,12 @@
+{
+ "url": "https://nmm-distributor-api.nerdio.net/swagger/v1/swagger.json",
+ "requested_url": "https://nmm-distributor-api.nerdio.net/swagger/v1/swagger.json",
+ "status": 200,
+ "content_type": "application/json;charset=utf-8",
+ "bytes": 18074,
+ "sha256": "45c52fd7497793e9c53ab8e3e71bbacab824a769675205840134cd18080bd3e8",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "equivalent",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the provider's current document describes the same operations (Jaccard 1.0), but the bytes differ, so the archive is an earlier or reformatted copy."
+}
