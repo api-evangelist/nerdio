@@ -2,8 +2,22 @@
   "repo": "nerdio",
   "feeds": [
     {
-      "source": "https://getnerdio.com/support/",
-      "feed_url": "https://getnerdio.com/support/feed/",
+      "source": "https://getnerdio.com/resources/?types[]=blog",
+      "feed_url": "https://getnerdio.com/resources/feed/",
+      "title": "",
+      "saved": 4,
+      "method": "discovered"
+    },
+    {
+      "source": "https://getnerdio.com/resources/feed/",
+      "feed_url": "https://getnerdio.com/resources/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
+      "source": "https://getnerdio.com/resources/?types%5B%5D=blog",
+      "feed_url": "https://getnerdio.com/resources/feed/",
       "title": "",
       "saved": 0,
       "method": "discovered"
@@ -16,6 +30,6 @@
       "method": "feed"
     }
   ],
-  "post_count": 0,
-  "fetched": "2026-10-03T12:30:02Z"
+  "post_count": 4,
+  "fetched": "2026-10-10T13:15:00Z"
 }
