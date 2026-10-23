@@ -37,3 +37,9 @@ paths:
           description: Conflict. Another distributor has already registered NMM Installs by partner you are trying to register.
       operationId: getApiV{version}Checkhealth
       x-operation-id-source: derived
+x-provenance:
+  method: harvested
+  publisher: Nerdio
+  source: https://nmm-distributor-api.nerdio.net/swagger/v1/swagger.json
+  note: split by refine-openapis from the provider's own published document, verified by fetch (openapi/_original/*.fetch.json);
+    stamped by stamp-openapi-provenance.py (roadmap#793)
